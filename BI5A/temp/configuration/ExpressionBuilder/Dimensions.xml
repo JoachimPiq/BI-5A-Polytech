@@ -1,5 +1,5 @@
 <?xml version="1.1" encoding="UTF-8"?>
-<expression:EMFExpression xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:expression="http:///expression.ecore" id="tMap_1=>" expression="30 * Math.round(Mathematical.INT(StringHandling.RIGHT(row2.TIME_OCC, 2))/60) + 100 * Mathematical.INT(StringHandling.LEFT(row2.TIME_OCC, -2+StringHandling.LEN(row2.TIME_OCC)))">
+<expression:EMFExpression xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:expression="http:///expression.ecore" id="tMap_3=>" expression="StringHandling.LEN(row2.Mocodes)>53?StringHandling.RIGHT(StringHandling.LEFT(row2.Mocodes,54),4):null">
   <variables name="row2.DR_NO" value="null" talendType="id_String"/>
   <variables name="row2.Date_Rptd" value="null" talendType="id_String" nullable="true"/>
   <variables name="row2.DATE_OCC" value="null" talendType="id_String" nullable="true"/>
@@ -28,8 +28,4 @@
   <variables name="row2.Cross_Street" value="null" talendType="id_String" nullable="true"/>
   <variables name="row2.LAT" value="null" talendType="id_String" nullable="true"/>
   <variables name="row2.LON" value="null" talendType="id_String" nullable="true"/>
-  <variables name="row4.DR_NO" value="null" talendType="id_String" nullable="true"/>
-  <variables name="row4.District" value="null" talendType="id_String" nullable="true"/>
-  <variables name="clean_mocodes.Mocodes" value="null" talendType="id_String" nullable="true"/>
-  <variables name="clean_mocodes.Mocodes_Explaination" value="null" talendType="id_String" nullable="true"/>
 </expression:EMFExpression>
