@@ -12,6 +12,7 @@
     <module>code/routines</module>
     <module>jobs/process/test_crimes_0.1</module>
     <module>jobs/process/dimensions_0.1</module>
+    <module>jobs/process/mocodes_0.1</module>
   </modules>
   <properties>
     <talend.project.name>BI5A</talend.project.name>

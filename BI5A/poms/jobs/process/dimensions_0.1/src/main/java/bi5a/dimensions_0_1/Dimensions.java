@@ -281,6 +281,16 @@ public class Dimensions implements TalendJob {
 		tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
+	public void tMap_3_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
+			throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
 	public void tMap_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
 			throws TalendException {
 
@@ -332,26 +342,6 @@ public class Dimensions implements TalendJob {
 	}
 
 	public void tFileOutputDelimited_3_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tUniqRow_5_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tFileInputDelimited_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tFileOutputDelimited_4_error(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
 		end_Hash.put(errorComponent, System.currentTimeMillis());
@@ -461,6 +451,26 @@ public class Dimensions implements TalendJob {
 		tFileInputDelimited_3_onSubJobError(exception, errorComponent, globalMap);
 	}
 
+	public void tUniqRow_5_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tFileInputDelimited_3_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tFileOutputDelimited_4_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tFileInputDelimited_3_onSubJobError(exception, errorComponent, globalMap);
+	}
+
 	public void tAdvancedHash_row4_error(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
@@ -469,16 +479,6 @@ public class Dimensions implements TalendJob {
 		status = "failure";
 
 		tFileInputDelimited_2_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tAdvancedHash_clean_mocodes_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tFileInputDelimited_3_onSubJobError(exception, errorComponent, globalMap);
 	}
 
 	public void tFileInputDelimited_1_onSubJobError(Exception exception, String errorComponent,
@@ -1021,194 +1021,6 @@ public class Dimensions implements TalendJob {
 
 	}
 
-	public static class row7Struct implements routines.system.IPersistableRow<row7Struct> {
-		final static byte[] commonByteArrayLock_BI5A_Dimensions = new byte[0];
-		static byte[] commonByteArray_BI5A_Dimensions = new byte[0];
-		protected static final int DEFAULT_HASHCODE = 1;
-		protected static final int PRIME = 31;
-		protected int hashCode = DEFAULT_HASHCODE;
-		public boolean hashCodeDirty = true;
-
-		public String loopKey;
-
-		public String Mocodes;
-
-		public String getMocodes() {
-			return this.Mocodes;
-		}
-
-		public String MoExplaination;
-
-		public String getMoExplaination() {
-			return this.MoExplaination;
-		}
-
-		@Override
-		public int hashCode() {
-			if (this.hashCodeDirty) {
-				final int prime = PRIME;
-				int result = DEFAULT_HASHCODE;
-
-				result = prime * result + ((this.Mocodes == null) ? 0 : this.Mocodes.hashCode());
-
-				this.hashCode = result;
-				this.hashCodeDirty = false;
-			}
-			return this.hashCode;
-		}
-
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			final row7Struct other = (row7Struct) obj;
-
-			if (this.Mocodes == null) {
-				if (other.Mocodes != null)
-					return false;
-
-			} else if (!this.Mocodes.equals(other.Mocodes))
-
-				return false;
-
-			return true;
-		}
-
-		public void copyDataTo(row7Struct other) {
-
-			other.Mocodes = this.Mocodes;
-			other.MoExplaination = this.MoExplaination;
-
-		}
-
-		public void copyKeysDataTo(row7Struct other) {
-
-			other.Mocodes = this.Mocodes;
-
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_BI5A_Dimensions.length) {
-					if (length < 1024 && commonByteArray_BI5A_Dimensions.length == 0) {
-						commonByteArray_BI5A_Dimensions = new byte[1024];
-					} else {
-						commonByteArray_BI5A_Dimensions = new byte[2 * length];
-					}
-				}
-				dis.readFully(commonByteArray_BI5A_Dimensions, 0, length);
-				strReturn = new String(commonByteArray_BI5A_Dimensions, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_BI5A_Dimensions) {
-
-				try {
-
-					int length = 0;
-
-					this.Mocodes = readString(dis);
-
-					this.MoExplaination = readString(dis);
-
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-
-				}
-
-			}
-
-		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.Mocodes, dos);
-
-				// String
-
-				writeString(this.MoExplaination, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("Mocodes=" + Mocodes);
-			sb.append(",MoExplaination=" + MoExplaination);
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row7Struct other) {
-
-			int returnValue = -1;
-
-			returnValue = checkNullsAndCompare(this.Mocodes, other.Mocodes);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
-	}
-
 	public static class row6Struct implements routines.system.IPersistableRow<row6Struct> {
 		final static byte[] commonByteArrayLock_BI5A_Dimensions = new byte[0];
 		static byte[] commonByteArray_BI5A_Dimensions = new byte[0];
@@ -1622,12 +1434,6 @@ public class Dimensions implements TalendJob {
 			return this.DR_NO;
 		}
 
-		public String Date_Rptd;
-
-		public String getDate_Rptd() {
-			return this.Date_Rptd;
-		}
-
 		public String DATE_OCC;
 
 		public String getDATE_OCC() {
@@ -1646,34 +1452,10 @@ public class Dimensions implements TalendJob {
 			return this.Crm_Cd;
 		}
 
-		public String Crm_Cd_Desc;
+		public String Vict_Id;
 
-		public String getCrm_Cd_Desc() {
-			return this.Crm_Cd_Desc;
-		}
-
-		public String Mocodes;
-
-		public String getMocodes() {
-			return this.Mocodes;
-		}
-
-		public String Vict_Age;
-
-		public String getVict_Age() {
-			return this.Vict_Age;
-		}
-
-		public String Vict_Sex;
-
-		public String getVict_Sex() {
-			return this.Vict_Sex;
-		}
-
-		public String Vict_Descent;
-
-		public String getVict_Descent() {
-			return this.Vict_Descent;
+		public String getVict_Id() {
+			return this.Vict_Id;
 		}
 
 		public String Premis_Cd;
@@ -1692,12 +1474,6 @@ public class Dimensions implements TalendJob {
 
 		public String getWeapon_Used_Cd() {
 			return this.Weapon_Used_Cd;
-		}
-
-		public String Weapon_Desc;
-
-		public String getWeapon_Desc() {
-			return this.Weapon_Desc;
 		}
 
 		public String Crm_Cd_1;
@@ -1728,6 +1504,72 @@ public class Dimensions implements TalendJob {
 
 		public String getDistrict() {
 			return this.District;
+		}
+
+		public String Mocode1;
+
+		public String getMocode1() {
+			return this.Mocode1;
+		}
+
+		public String Mocode2;
+
+		public String getMocode2() {
+			return this.Mocode2;
+		}
+
+		public String Mocode3;
+
+		public String getMocode3() {
+			return this.Mocode3;
+		}
+
+		public String Mocode4;
+
+		public String getMocode4() {
+			return this.Mocode4;
+		}
+
+		public String Mocode5;
+
+		public String getMocode5() {
+			return this.Mocode5;
+		}
+
+		public String Mocode6;
+
+		public String getMocode6() {
+			return this.Mocode6;
+		}
+
+		public String Mocode7;
+
+		public String getMocode7() {
+			return this.Mocode7;
+		}
+
+		public String Mocode8;
+
+		public String getMocode8() {
+			return this.Mocode8;
+		}
+
+		public String Mocode9;
+
+		public String getMocode9() {
+			return this.Mocode9;
+		}
+
+		public String Mocode10;
+
+		public String getMocode10() {
+			return this.Mocode10;
+		}
+
+		public String Mocode11;
+
+		public String getMocode11() {
+			return this.Mocode11;
 		}
 
 		@Override
@@ -1768,24 +1610,29 @@ public class Dimensions implements TalendJob {
 		public void copyDataTo(crimes_outputStruct other) {
 
 			other.DR_NO = this.DR_NO;
-			other.Date_Rptd = this.Date_Rptd;
 			other.DATE_OCC = this.DATE_OCC;
 			other.TIME_OCC = this.TIME_OCC;
 			other.Crm_Cd = this.Crm_Cd;
-			other.Crm_Cd_Desc = this.Crm_Cd_Desc;
-			other.Mocodes = this.Mocodes;
-			other.Vict_Age = this.Vict_Age;
-			other.Vict_Sex = this.Vict_Sex;
-			other.Vict_Descent = this.Vict_Descent;
+			other.Vict_Id = this.Vict_Id;
 			other.Premis_Cd = this.Premis_Cd;
 			other.Premis_Desc = this.Premis_Desc;
 			other.Weapon_Used_Cd = this.Weapon_Used_Cd;
-			other.Weapon_Desc = this.Weapon_Desc;
 			other.Crm_Cd_1 = this.Crm_Cd_1;
 			other.Crm_Cd_2 = this.Crm_Cd_2;
 			other.Crm_Cd_3 = this.Crm_Cd_3;
 			other.Crm_Cd_4 = this.Crm_Cd_4;
 			other.District = this.District;
+			other.Mocode1 = this.Mocode1;
+			other.Mocode2 = this.Mocode2;
+			other.Mocode3 = this.Mocode3;
+			other.Mocode4 = this.Mocode4;
+			other.Mocode5 = this.Mocode5;
+			other.Mocode6 = this.Mocode6;
+			other.Mocode7 = this.Mocode7;
+			other.Mocode8 = this.Mocode8;
+			other.Mocode9 = this.Mocode9;
+			other.Mocode10 = this.Mocode10;
+			other.Mocode11 = this.Mocode11;
 
 		}
 
@@ -1856,31 +1703,19 @@ public class Dimensions implements TalendJob {
 
 					this.DR_NO = readString(dis);
 
-					this.Date_Rptd = readString(dis);
-
 					this.DATE_OCC = readString(dis);
 
 					this.TIME_OCC = readString(dis);
 
 					this.Crm_Cd = readInteger(dis);
 
-					this.Crm_Cd_Desc = readString(dis);
-
-					this.Mocodes = readString(dis);
-
-					this.Vict_Age = readString(dis);
-
-					this.Vict_Sex = readString(dis);
-
-					this.Vict_Descent = readString(dis);
+					this.Vict_Id = readString(dis);
 
 					this.Premis_Cd = readString(dis);
 
 					this.Premis_Desc = readString(dis);
 
 					this.Weapon_Used_Cd = readString(dis);
-
-					this.Weapon_Desc = readString(dis);
 
 					this.Crm_Cd_1 = readString(dis);
 
@@ -1891,6 +1726,28 @@ public class Dimensions implements TalendJob {
 					this.Crm_Cd_4 = readString(dis);
 
 					this.District = readString(dis);
+
+					this.Mocode1 = readString(dis);
+
+					this.Mocode2 = readString(dis);
+
+					this.Mocode3 = readString(dis);
+
+					this.Mocode4 = readString(dis);
+
+					this.Mocode5 = readString(dis);
+
+					this.Mocode6 = readString(dis);
+
+					this.Mocode7 = readString(dis);
+
+					this.Mocode8 = readString(dis);
+
+					this.Mocode9 = readString(dis);
+
+					this.Mocode10 = readString(dis);
+
+					this.Mocode11 = readString(dis);
 
 				} catch (IOException e) {
 					throw new RuntimeException(e);
@@ -1910,10 +1767,6 @@ public class Dimensions implements TalendJob {
 
 				// String
 
-				writeString(this.Date_Rptd, dos);
-
-				// String
-
 				writeString(this.DATE_OCC, dos);
 
 				// String
@@ -1926,23 +1779,7 @@ public class Dimensions implements TalendJob {
 
 				// String
 
-				writeString(this.Crm_Cd_Desc, dos);
-
-				// String
-
-				writeString(this.Mocodes, dos);
-
-				// String
-
-				writeString(this.Vict_Age, dos);
-
-				// String
-
-				writeString(this.Vict_Sex, dos);
-
-				// String
-
-				writeString(this.Vict_Descent, dos);
+				writeString(this.Vict_Id, dos);
 
 				// String
 
@@ -1955,10 +1792,6 @@ public class Dimensions implements TalendJob {
 				// String
 
 				writeString(this.Weapon_Used_Cd, dos);
-
-				// String
-
-				writeString(this.Weapon_Desc, dos);
 
 				// String
 
@@ -1980,6 +1813,50 @@ public class Dimensions implements TalendJob {
 
 				writeString(this.District, dos);
 
+				// String
+
+				writeString(this.Mocode1, dos);
+
+				// String
+
+				writeString(this.Mocode2, dos);
+
+				// String
+
+				writeString(this.Mocode3, dos);
+
+				// String
+
+				writeString(this.Mocode4, dos);
+
+				// String
+
+				writeString(this.Mocode5, dos);
+
+				// String
+
+				writeString(this.Mocode6, dos);
+
+				// String
+
+				writeString(this.Mocode7, dos);
+
+				// String
+
+				writeString(this.Mocode8, dos);
+
+				// String
+
+				writeString(this.Mocode9, dos);
+
+				// String
+
+				writeString(this.Mocode10, dos);
+
+				// String
+
+				writeString(this.Mocode11, dos);
+
 			} catch (IOException e) {
 				throw new RuntimeException(e);
 			}
@@ -1992,24 +1869,29 @@ public class Dimensions implements TalendJob {
 			sb.append(super.toString());
 			sb.append("[");
 			sb.append("DR_NO=" + DR_NO);
-			sb.append(",Date_Rptd=" + Date_Rptd);
 			sb.append(",DATE_OCC=" + DATE_OCC);
 			sb.append(",TIME_OCC=" + TIME_OCC);
 			sb.append(",Crm_Cd=" + String.valueOf(Crm_Cd));
-			sb.append(",Crm_Cd_Desc=" + Crm_Cd_Desc);
-			sb.append(",Mocodes=" + Mocodes);
-			sb.append(",Vict_Age=" + Vict_Age);
-			sb.append(",Vict_Sex=" + Vict_Sex);
-			sb.append(",Vict_Descent=" + Vict_Descent);
+			sb.append(",Vict_Id=" + Vict_Id);
 			sb.append(",Premis_Cd=" + Premis_Cd);
 			sb.append(",Premis_Desc=" + Premis_Desc);
 			sb.append(",Weapon_Used_Cd=" + Weapon_Used_Cd);
-			sb.append(",Weapon_Desc=" + Weapon_Desc);
 			sb.append(",Crm_Cd_1=" + Crm_Cd_1);
 			sb.append(",Crm_Cd_2=" + Crm_Cd_2);
 			sb.append(",Crm_Cd_3=" + Crm_Cd_3);
 			sb.append(",Crm_Cd_4=" + Crm_Cd_4);
 			sb.append(",District=" + District);
+			sb.append(",Mocode1=" + Mocode1);
+			sb.append(",Mocode2=" + Mocode2);
+			sb.append(",Mocode3=" + Mocode3);
+			sb.append(",Mocode4=" + Mocode4);
+			sb.append(",Mocode5=" + Mocode5);
+			sb.append(",Mocode6=" + Mocode6);
+			sb.append(",Mocode7=" + Mocode7);
+			sb.append(",Mocode8=" + Mocode8);
+			sb.append(",Mocode9=" + Mocode9);
+			sb.append(",Mocode10=" + Mocode10);
+			sb.append(",Mocode11=" + Mocode11);
 			sb.append("]");
 
 			return sb.toString();
@@ -2420,195 +2302,6 @@ public class Dimensions implements TalendJob {
 			int returnValue = -1;
 
 			returnValue = checkNullsAndCompare(this.Crm_Cd, other.Crm_Cd);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
-	}
-
-	public static class mode_operatoire_outputStruct
-			implements routines.system.IPersistableRow<mode_operatoire_outputStruct> {
-		final static byte[] commonByteArrayLock_BI5A_Dimensions = new byte[0];
-		static byte[] commonByteArray_BI5A_Dimensions = new byte[0];
-		protected static final int DEFAULT_HASHCODE = 1;
-		protected static final int PRIME = 31;
-		protected int hashCode = DEFAULT_HASHCODE;
-		public boolean hashCodeDirty = true;
-
-		public String loopKey;
-
-		public String Mocodes;
-
-		public String getMocodes() {
-			return this.Mocodes;
-		}
-
-		public String MoExplaination;
-
-		public String getMoExplaination() {
-			return this.MoExplaination;
-		}
-
-		@Override
-		public int hashCode() {
-			if (this.hashCodeDirty) {
-				final int prime = PRIME;
-				int result = DEFAULT_HASHCODE;
-
-				result = prime * result + ((this.Mocodes == null) ? 0 : this.Mocodes.hashCode());
-
-				this.hashCode = result;
-				this.hashCodeDirty = false;
-			}
-			return this.hashCode;
-		}
-
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			final mode_operatoire_outputStruct other = (mode_operatoire_outputStruct) obj;
-
-			if (this.Mocodes == null) {
-				if (other.Mocodes != null)
-					return false;
-
-			} else if (!this.Mocodes.equals(other.Mocodes))
-
-				return false;
-
-			return true;
-		}
-
-		public void copyDataTo(mode_operatoire_outputStruct other) {
-
-			other.Mocodes = this.Mocodes;
-			other.MoExplaination = this.MoExplaination;
-
-		}
-
-		public void copyKeysDataTo(mode_operatoire_outputStruct other) {
-
-			other.Mocodes = this.Mocodes;
-
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_BI5A_Dimensions.length) {
-					if (length < 1024 && commonByteArray_BI5A_Dimensions.length == 0) {
-						commonByteArray_BI5A_Dimensions = new byte[1024];
-					} else {
-						commonByteArray_BI5A_Dimensions = new byte[2 * length];
-					}
-				}
-				dis.readFully(commonByteArray_BI5A_Dimensions, 0, length);
-				strReturn = new String(commonByteArray_BI5A_Dimensions, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_BI5A_Dimensions) {
-
-				try {
-
-					int length = 0;
-
-					this.Mocodes = readString(dis);
-
-					this.MoExplaination = readString(dis);
-
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-
-				}
-
-			}
-
-		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.Mocodes, dos);
-
-				// String
-
-				writeString(this.MoExplaination, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("Mocodes=" + Mocodes);
-			sb.append(",MoExplaination=" + MoExplaination);
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(mode_operatoire_outputStruct other) {
-
-			int returnValue = -1;
-
-			returnValue = checkNullsAndCompare(this.Mocodes, other.Mocodes);
 			if (returnValue != 0) {
 				return returnValue;
 			}
@@ -3128,6 +2821,624 @@ public class Dimensions implements TalendJob {
 			if (returnValue != 0) {
 				return returnValue;
 			}
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public static class clean_mocode_listStruct implements routines.system.IPersistableRow<clean_mocode_listStruct> {
+		final static byte[] commonByteArrayLock_BI5A_Dimensions = new byte[0];
+		static byte[] commonByteArray_BI5A_Dimensions = new byte[0];
+
+		public String DR_NO;
+
+		public String getDR_NO() {
+			return this.DR_NO;
+		}
+
+		public String Date_Rptd;
+
+		public String getDate_Rptd() {
+			return this.Date_Rptd;
+		}
+
+		public String DATE_OCC;
+
+		public String getDATE_OCC() {
+			return this.DATE_OCC;
+		}
+
+		public String TIME_OCC;
+
+		public String getTIME_OCC() {
+			return this.TIME_OCC;
+		}
+
+		public String AREA;
+
+		public String getAREA() {
+			return this.AREA;
+		}
+
+		public String AREA_NAME;
+
+		public String getAREA_NAME() {
+			return this.AREA_NAME;
+		}
+
+		public String Rpt_Dist_No;
+
+		public String getRpt_Dist_No() {
+			return this.Rpt_Dist_No;
+		}
+
+		public Integer Part_1_2;
+
+		public Integer getPart_1_2() {
+			return this.Part_1_2;
+		}
+
+		public Integer Crm_Cd;
+
+		public Integer getCrm_Cd() {
+			return this.Crm_Cd;
+		}
+
+		public String Crm_Cd_Desc;
+
+		public String getCrm_Cd_Desc() {
+			return this.Crm_Cd_Desc;
+		}
+
+		public String Mocode1;
+
+		public String getMocode1() {
+			return this.Mocode1;
+		}
+
+		public String Mocode2;
+
+		public String getMocode2() {
+			return this.Mocode2;
+		}
+
+		public String Mocode3;
+
+		public String getMocode3() {
+			return this.Mocode3;
+		}
+
+		public String Mocode4;
+
+		public String getMocode4() {
+			return this.Mocode4;
+		}
+
+		public String Mocode5;
+
+		public String getMocode5() {
+			return this.Mocode5;
+		}
+
+		public String Mocode6;
+
+		public String getMocode6() {
+			return this.Mocode6;
+		}
+
+		public String Mocode7;
+
+		public String getMocode7() {
+			return this.Mocode7;
+		}
+
+		public String Mocode8;
+
+		public String getMocode8() {
+			return this.Mocode8;
+		}
+
+		public String Mocode9;
+
+		public String getMocode9() {
+			return this.Mocode9;
+		}
+
+		public String Mocode10;
+
+		public String getMocode10() {
+			return this.Mocode10;
+		}
+
+		public String Mocode11;
+
+		public String getMocode11() {
+			return this.Mocode11;
+		}
+
+		public String Vict_Age;
+
+		public String getVict_Age() {
+			return this.Vict_Age;
+		}
+
+		public String Vict_Sex;
+
+		public String getVict_Sex() {
+			return this.Vict_Sex;
+		}
+
+		public String Vict_Descent;
+
+		public String getVict_Descent() {
+			return this.Vict_Descent;
+		}
+
+		public String Premis_Cd;
+
+		public String getPremis_Cd() {
+			return this.Premis_Cd;
+		}
+
+		public String Premis_Desc;
+
+		public String getPremis_Desc() {
+			return this.Premis_Desc;
+		}
+
+		public String Weapon_Used_Cd;
+
+		public String getWeapon_Used_Cd() {
+			return this.Weapon_Used_Cd;
+		}
+
+		public String Weapon_Desc;
+
+		public String getWeapon_Desc() {
+			return this.Weapon_Desc;
+		}
+
+		public String Status;
+
+		public String getStatus() {
+			return this.Status;
+		}
+
+		public String Status_Desc;
+
+		public String getStatus_Desc() {
+			return this.Status_Desc;
+		}
+
+		public String Crm_Cd_1;
+
+		public String getCrm_Cd_1() {
+			return this.Crm_Cd_1;
+		}
+
+		public String Crm_Cd_2;
+
+		public String getCrm_Cd_2() {
+			return this.Crm_Cd_2;
+		}
+
+		public String Crm_Cd_3;
+
+		public String getCrm_Cd_3() {
+			return this.Crm_Cd_3;
+		}
+
+		public String Crm_Cd_4;
+
+		public String getCrm_Cd_4() {
+			return this.Crm_Cd_4;
+		}
+
+		public String LOCATION;
+
+		public String getLOCATION() {
+			return this.LOCATION;
+		}
+
+		public String Cross_Street;
+
+		public String getCross_Street() {
+			return this.Cross_Street;
+		}
+
+		public String LAT;
+
+		public String getLAT() {
+			return this.LAT;
+		}
+
+		public String LON;
+
+		public String getLON() {
+			return this.LON;
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_BI5A_Dimensions.length) {
+					if (length < 1024 && commonByteArray_BI5A_Dimensions.length == 0) {
+						commonByteArray_BI5A_Dimensions = new byte[1024];
+					} else {
+						commonByteArray_BI5A_Dimensions = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_BI5A_Dimensions, 0, length);
+				strReturn = new String(commonByteArray_BI5A_Dimensions, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_BI5A_Dimensions) {
+
+				try {
+
+					int length = 0;
+
+					this.DR_NO = readString(dis);
+
+					this.Date_Rptd = readString(dis);
+
+					this.DATE_OCC = readString(dis);
+
+					this.TIME_OCC = readString(dis);
+
+					this.AREA = readString(dis);
+
+					this.AREA_NAME = readString(dis);
+
+					this.Rpt_Dist_No = readString(dis);
+
+					this.Part_1_2 = readInteger(dis);
+
+					this.Crm_Cd = readInteger(dis);
+
+					this.Crm_Cd_Desc = readString(dis);
+
+					this.Mocode1 = readString(dis);
+
+					this.Mocode2 = readString(dis);
+
+					this.Mocode3 = readString(dis);
+
+					this.Mocode4 = readString(dis);
+
+					this.Mocode5 = readString(dis);
+
+					this.Mocode6 = readString(dis);
+
+					this.Mocode7 = readString(dis);
+
+					this.Mocode8 = readString(dis);
+
+					this.Mocode9 = readString(dis);
+
+					this.Mocode10 = readString(dis);
+
+					this.Mocode11 = readString(dis);
+
+					this.Vict_Age = readString(dis);
+
+					this.Vict_Sex = readString(dis);
+
+					this.Vict_Descent = readString(dis);
+
+					this.Premis_Cd = readString(dis);
+
+					this.Premis_Desc = readString(dis);
+
+					this.Weapon_Used_Cd = readString(dis);
+
+					this.Weapon_Desc = readString(dis);
+
+					this.Status = readString(dis);
+
+					this.Status_Desc = readString(dis);
+
+					this.Crm_Cd_1 = readString(dis);
+
+					this.Crm_Cd_2 = readString(dis);
+
+					this.Crm_Cd_3 = readString(dis);
+
+					this.Crm_Cd_4 = readString(dis);
+
+					this.LOCATION = readString(dis);
+
+					this.Cross_Street = readString(dis);
+
+					this.LAT = readString(dis);
+
+					this.LON = readString(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// String
+
+				writeString(this.DR_NO, dos);
+
+				// String
+
+				writeString(this.Date_Rptd, dos);
+
+				// String
+
+				writeString(this.DATE_OCC, dos);
+
+				// String
+
+				writeString(this.TIME_OCC, dos);
+
+				// String
+
+				writeString(this.AREA, dos);
+
+				// String
+
+				writeString(this.AREA_NAME, dos);
+
+				// String
+
+				writeString(this.Rpt_Dist_No, dos);
+
+				// Integer
+
+				writeInteger(this.Part_1_2, dos);
+
+				// Integer
+
+				writeInteger(this.Crm_Cd, dos);
+
+				// String
+
+				writeString(this.Crm_Cd_Desc, dos);
+
+				// String
+
+				writeString(this.Mocode1, dos);
+
+				// String
+
+				writeString(this.Mocode2, dos);
+
+				// String
+
+				writeString(this.Mocode3, dos);
+
+				// String
+
+				writeString(this.Mocode4, dos);
+
+				// String
+
+				writeString(this.Mocode5, dos);
+
+				// String
+
+				writeString(this.Mocode6, dos);
+
+				// String
+
+				writeString(this.Mocode7, dos);
+
+				// String
+
+				writeString(this.Mocode8, dos);
+
+				// String
+
+				writeString(this.Mocode9, dos);
+
+				// String
+
+				writeString(this.Mocode10, dos);
+
+				// String
+
+				writeString(this.Mocode11, dos);
+
+				// String
+
+				writeString(this.Vict_Age, dos);
+
+				// String
+
+				writeString(this.Vict_Sex, dos);
+
+				// String
+
+				writeString(this.Vict_Descent, dos);
+
+				// String
+
+				writeString(this.Premis_Cd, dos);
+
+				// String
+
+				writeString(this.Premis_Desc, dos);
+
+				// String
+
+				writeString(this.Weapon_Used_Cd, dos);
+
+				// String
+
+				writeString(this.Weapon_Desc, dos);
+
+				// String
+
+				writeString(this.Status, dos);
+
+				// String
+
+				writeString(this.Status_Desc, dos);
+
+				// String
+
+				writeString(this.Crm_Cd_1, dos);
+
+				// String
+
+				writeString(this.Crm_Cd_2, dos);
+
+				// String
+
+				writeString(this.Crm_Cd_3, dos);
+
+				// String
+
+				writeString(this.Crm_Cd_4, dos);
+
+				// String
+
+				writeString(this.LOCATION, dos);
+
+				// String
+
+				writeString(this.Cross_Street, dos);
+
+				// String
+
+				writeString(this.LAT, dos);
+
+				// String
+
+				writeString(this.LON, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("DR_NO=" + DR_NO);
+			sb.append(",Date_Rptd=" + Date_Rptd);
+			sb.append(",DATE_OCC=" + DATE_OCC);
+			sb.append(",TIME_OCC=" + TIME_OCC);
+			sb.append(",AREA=" + AREA);
+			sb.append(",AREA_NAME=" + AREA_NAME);
+			sb.append(",Rpt_Dist_No=" + Rpt_Dist_No);
+			sb.append(",Part_1_2=" + String.valueOf(Part_1_2));
+			sb.append(",Crm_Cd=" + String.valueOf(Crm_Cd));
+			sb.append(",Crm_Cd_Desc=" + Crm_Cd_Desc);
+			sb.append(",Mocode1=" + Mocode1);
+			sb.append(",Mocode2=" + Mocode2);
+			sb.append(",Mocode3=" + Mocode3);
+			sb.append(",Mocode4=" + Mocode4);
+			sb.append(",Mocode5=" + Mocode5);
+			sb.append(",Mocode6=" + Mocode6);
+			sb.append(",Mocode7=" + Mocode7);
+			sb.append(",Mocode8=" + Mocode8);
+			sb.append(",Mocode9=" + Mocode9);
+			sb.append(",Mocode10=" + Mocode10);
+			sb.append(",Mocode11=" + Mocode11);
+			sb.append(",Vict_Age=" + Vict_Age);
+			sb.append(",Vict_Sex=" + Vict_Sex);
+			sb.append(",Vict_Descent=" + Vict_Descent);
+			sb.append(",Premis_Cd=" + Premis_Cd);
+			sb.append(",Premis_Desc=" + Premis_Desc);
+			sb.append(",Weapon_Used_Cd=" + Weapon_Used_Cd);
+			sb.append(",Weapon_Desc=" + Weapon_Desc);
+			sb.append(",Status=" + Status);
+			sb.append(",Status_Desc=" + Status_Desc);
+			sb.append(",Crm_Cd_1=" + Crm_Cd_1);
+			sb.append(",Crm_Cd_2=" + Crm_Cd_2);
+			sb.append(",Crm_Cd_3=" + Crm_Cd_3);
+			sb.append(",Crm_Cd_4=" + Crm_Cd_4);
+			sb.append(",LOCATION=" + LOCATION);
+			sb.append(",Cross_Street=" + Cross_Street);
+			sb.append(",LAT=" + LAT);
+			sb.append(",LON=" + LON);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(clean_mocode_listStruct other) {
+
+			int returnValue = -1;
 
 			return returnValue;
 		}
@@ -4811,17 +5122,15 @@ public class Dimensions implements TalendJob {
 				globalResumeTicket = true;
 
 				tFileInputDelimited_2Process(globalMap);
-				tFileInputDelimited_3Process(globalMap);
 
 				row1Struct row1 = new row1Struct();
 				row2Struct row2 = new row2Struct();
+				clean_mocode_listStruct clean_mocode_list = new clean_mocode_listStruct();
 				crimes_outputStruct crimes_output = new crimes_outputStruct();
 				weapon_outputStruct weapon_output = new weapon_outputStruct();
 				row5Struct row5 = new row5Struct();
 				crime_outputStruct crime_output = new crime_outputStruct();
 				row6Struct row6 = new row6Struct();
-				mode_operatoire_outputStruct mode_operatoire_output = new mode_operatoire_outputStruct();
-				row7Struct row7 = new row7Struct();
 				day_outputStruct day_output = new day_outputStruct();
 				row8Struct row8 = new row8Struct();
 				time_outputStruct time_output = new time_outputStruct();
@@ -4917,6 +5226,57 @@ public class Dimensions implements TalendJob {
 				}
 				outtFileOutputDelimited_1 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
 						new java.io.FileOutputStream(fileName_tFileOutputDelimited_1, false), "ISO-8859-15"));
+				if (filetFileOutputDelimited_1.length() == 0) {
+					outtFileOutputDelimited_1.write("Vict_Id");
+					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
+					outtFileOutputDelimited_1.write("Mocode1");
+					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
+					outtFileOutputDelimited_1.write("Mocode2");
+					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
+					outtFileOutputDelimited_1.write("Mocode3");
+					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
+					outtFileOutputDelimited_1.write("Mocode4");
+					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
+					outtFileOutputDelimited_1.write("Mocode5");
+					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
+					outtFileOutputDelimited_1.write("Mocode6");
+					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
+					outtFileOutputDelimited_1.write("Mocode7");
+					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
+					outtFileOutputDelimited_1.write("Mocode8");
+					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
+					outtFileOutputDelimited_1.write("Mocode9");
+					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
+					outtFileOutputDelimited_1.write("Mocode10");
+					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
+					outtFileOutputDelimited_1.write("Mocode11");
+					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
+					outtFileOutputDelimited_1.write("DR_NO");
+					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
+					outtFileOutputDelimited_1.write("DATE_OCC");
+					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
+					outtFileOutputDelimited_1.write("TIME_OCC");
+					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
+					outtFileOutputDelimited_1.write("Crm_Cd");
+					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
+					outtFileOutputDelimited_1.write("Premis_Cd");
+					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
+					outtFileOutputDelimited_1.write("Premis_Desc");
+					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
+					outtFileOutputDelimited_1.write("Weapon_Used_Cd");
+					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
+					outtFileOutputDelimited_1.write("Crm_Cd_1");
+					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
+					outtFileOutputDelimited_1.write("Crm_Cd_2");
+					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
+					outtFileOutputDelimited_1.write("Crm_Cd_3");
+					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
+					outtFileOutputDelimited_1.write("Crm_Cd_4");
+					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
+					outtFileOutputDelimited_1.write("District");
+					outtFileOutputDelimited_1.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_1);
+					outtFileOutputDelimited_1.flush();
+				}
 
 				resourceMap.put("out_tFileOutputDelimited_1", outtFileOutputDelimited_1);
 				resourceMap.put("nb_line_tFileOutputDelimited_1", nb_line_tFileOutputDelimited_1);
@@ -5013,6 +5373,13 @@ public class Dimensions implements TalendJob {
 				}
 				outtFileOutputDelimited_2 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
 						new java.io.FileOutputStream(fileName_tFileOutputDelimited_2, false), "ISO-8859-15"));
+				if (filetFileOutputDelimited_2.length() == 0) {
+					outtFileOutputDelimited_2.write("Weapon_Used_Cd");
+					outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
+					outtFileOutputDelimited_2.write("Weapon_Desc");
+					outtFileOutputDelimited_2.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_2);
+					outtFileOutputDelimited_2.flush();
+				}
 
 				resourceMap.put("out_tFileOutputDelimited_2", outtFileOutputDelimited_2);
 				resourceMap.put("nb_line_tFileOutputDelimited_2", nb_line_tFileOutputDelimited_2);
@@ -5186,6 +5553,13 @@ public class Dimensions implements TalendJob {
 				}
 				outtFileOutputDelimited_3 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
 						new java.io.FileOutputStream(fileName_tFileOutputDelimited_3, false), "ISO-8859-15"));
+				if (filetFileOutputDelimited_3.length() == 0) {
+					outtFileOutputDelimited_3.write("Crm_Cd");
+					outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
+					outtFileOutputDelimited_3.write("Crm_Cd_Desc");
+					outtFileOutputDelimited_3.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_3);
+					outtFileOutputDelimited_3.flush();
+				}
 
 				resourceMap.put("out_tFileOutputDelimited_3", outtFileOutputDelimited_3);
 				resourceMap.put("nb_line_tFileOutputDelimited_3", nb_line_tFileOutputDelimited_3);
@@ -5268,178 +5642,6 @@ public class Dimensions implements TalendJob {
 
 				/**
 				 * [tUniqRow_4 begin ] stop
-				 */
-
-				/**
-				 * [tFileOutputDelimited_4 begin ] start
-				 */
-
-				ok_Hash.put("tFileOutputDelimited_4", false);
-				start_Hash.put("tFileOutputDelimited_4", System.currentTimeMillis());
-
-				currentComponent = "tFileOutputDelimited_4";
-
-				if (execStat) {
-					if (resourceMap.get("inIterateVComp") == null) {
-
-						if (execStat) {
-							runStat.updateStatOnConnection("row7" + iterateId, 0, 0);
-						}
-
-					}
-				}
-
-				int tos_count_tFileOutputDelimited_4 = 0;
-
-				String fileName_tFileOutputDelimited_4 = "";
-				fileName_tFileOutputDelimited_4 = (new java.io.File(
-						"C:/Users/roro1/Documents/5A_INFO/Projet BI/Mode Operatoire output.csv")).getAbsolutePath()
-								.replace("\\", "/");
-				String fullName_tFileOutputDelimited_4 = null;
-				String extension_tFileOutputDelimited_4 = null;
-				String directory_tFileOutputDelimited_4 = null;
-				if ((fileName_tFileOutputDelimited_4.indexOf("/") != -1)) {
-					if (fileName_tFileOutputDelimited_4.lastIndexOf(".") < fileName_tFileOutputDelimited_4
-							.lastIndexOf("/")) {
-						fullName_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4;
-						extension_tFileOutputDelimited_4 = "";
-					} else {
-						fullName_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4.substring(0,
-								fileName_tFileOutputDelimited_4.lastIndexOf("."));
-						extension_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4
-								.substring(fileName_tFileOutputDelimited_4.lastIndexOf("."));
-					}
-					directory_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4.substring(0,
-							fileName_tFileOutputDelimited_4.lastIndexOf("/"));
-				} else {
-					if (fileName_tFileOutputDelimited_4.lastIndexOf(".") != -1) {
-						fullName_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4.substring(0,
-								fileName_tFileOutputDelimited_4.lastIndexOf("."));
-						extension_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4
-								.substring(fileName_tFileOutputDelimited_4.lastIndexOf("."));
-					} else {
-						fullName_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4;
-						extension_tFileOutputDelimited_4 = "";
-					}
-					directory_tFileOutputDelimited_4 = "";
-				}
-				boolean isFileGenerated_tFileOutputDelimited_4 = true;
-				java.io.File filetFileOutputDelimited_4 = new java.io.File(fileName_tFileOutputDelimited_4);
-				globalMap.put("tFileOutputDelimited_4_FILE_NAME", fileName_tFileOutputDelimited_4);
-				int nb_line_tFileOutputDelimited_4 = 0;
-				int splitedFileNo_tFileOutputDelimited_4 = 0;
-				int currentRow_tFileOutputDelimited_4 = 0;
-
-				final String OUT_DELIM_tFileOutputDelimited_4 = /** Start field tFileOutputDelimited_4:FIELDSEPARATOR */
-						";"/** End field tFileOutputDelimited_4:FIELDSEPARATOR */
-				;
-
-				final String OUT_DELIM_ROWSEP_tFileOutputDelimited_4 = /**
-																		 * Start field
-																		 * tFileOutputDelimited_4:ROWSEPARATOR
-																		 */
-						"\n"/** End field tFileOutputDelimited_4:ROWSEPARATOR */
-				;
-
-				// create directory only if not exists
-				if (directory_tFileOutputDelimited_4 != null && directory_tFileOutputDelimited_4.trim().length() != 0) {
-					java.io.File dir_tFileOutputDelimited_4 = new java.io.File(directory_tFileOutputDelimited_4);
-					if (!dir_tFileOutputDelimited_4.exists()) {
-						dir_tFileOutputDelimited_4.mkdirs();
-					}
-				}
-
-				// routines.system.Row
-				java.io.Writer outtFileOutputDelimited_4 = null;
-
-				java.io.File fileToDelete_tFileOutputDelimited_4 = new java.io.File(fileName_tFileOutputDelimited_4);
-				if (fileToDelete_tFileOutputDelimited_4.exists()) {
-					fileToDelete_tFileOutputDelimited_4.delete();
-				}
-				outtFileOutputDelimited_4 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
-						new java.io.FileOutputStream(fileName_tFileOutputDelimited_4, false), "ISO-8859-15"));
-
-				resourceMap.put("out_tFileOutputDelimited_4", outtFileOutputDelimited_4);
-				resourceMap.put("nb_line_tFileOutputDelimited_4", nb_line_tFileOutputDelimited_4);
-
-				/**
-				 * [tFileOutputDelimited_4 begin ] stop
-				 */
-
-				/**
-				 * [tUniqRow_5 begin ] start
-				 */
-
-				ok_Hash.put("tUniqRow_5", false);
-				start_Hash.put("tUniqRow_5", System.currentTimeMillis());
-
-				currentComponent = "tUniqRow_5";
-
-				if (execStat) {
-					if (resourceMap.get("inIterateVComp") == null) {
-
-						if (execStat) {
-							runStat.updateStatOnConnection("mode_operatoire_output" + iterateId, 0, 0);
-						}
-
-					}
-				}
-
-				int tos_count_tUniqRow_5 = 0;
-
-				class KeyStruct_tUniqRow_5 {
-
-					private static final int DEFAULT_HASHCODE = 1;
-					private static final int PRIME = 31;
-					private int hashCode = DEFAULT_HASHCODE;
-					public boolean hashCodeDirty = true;
-
-					String Mocodes;
-
-					@Override
-					public int hashCode() {
-						if (this.hashCodeDirty) {
-							final int prime = PRIME;
-							int result = DEFAULT_HASHCODE;
-
-							result = prime * result + ((this.Mocodes == null) ? 0 : this.Mocodes.hashCode());
-
-							this.hashCode = result;
-							this.hashCodeDirty = false;
-						}
-						return this.hashCode;
-					}
-
-					@Override
-					public boolean equals(Object obj) {
-						if (this == obj)
-							return true;
-						if (obj == null)
-							return false;
-						if (getClass() != obj.getClass())
-							return false;
-						final KeyStruct_tUniqRow_5 other = (KeyStruct_tUniqRow_5) obj;
-
-						if (this.Mocodes == null) {
-							if (other.Mocodes != null)
-								return false;
-
-						} else if (!this.Mocodes.equals(other.Mocodes))
-
-							return false;
-
-						return true;
-					}
-
-				}
-
-				int nb_uniques_tUniqRow_5 = 0;
-				int nb_duplicates_tUniqRow_5 = 0;
-				KeyStruct_tUniqRow_5 finder_tUniqRow_5 = new KeyStruct_tUniqRow_5();
-				java.util.Set<KeyStruct_tUniqRow_5> keystUniqRow_5 = new java.util.HashSet<KeyStruct_tUniqRow_5>();
-
-				/**
-				 * [tUniqRow_5 begin ] stop
 				 */
 
 				/**
@@ -5530,6 +5732,11 @@ public class Dimensions implements TalendJob {
 				}
 				outtFileOutputDelimited_5 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
 						new java.io.FileOutputStream(fileName_tFileOutputDelimited_5, false), "ISO-8859-15"));
+				if (filetFileOutputDelimited_5.length() == 0) {
+					outtFileOutputDelimited_5.write("DATE_OCC");
+					outtFileOutputDelimited_5.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_5);
+					outtFileOutputDelimited_5.flush();
+				}
 
 				resourceMap.put("out_tFileOutputDelimited_5", outtFileOutputDelimited_5);
 				resourceMap.put("nb_line_tFileOutputDelimited_5", nb_line_tFileOutputDelimited_5);
@@ -5637,7 +5844,7 @@ public class Dimensions implements TalendJob {
 
 				String fileName_tFileOutputDelimited_6 = "";
 				fileName_tFileOutputDelimited_6 = (new java.io.File(
-						"C:/Users/roro1/Documents/5A_INFO/Projet Time output.csv")).getAbsolutePath().replace("\\",
+						"C:/Users/roro1/Documents/5A_INFO/Projet BI/Time output.csv")).getAbsolutePath().replace("\\",
 								"/");
 				String fullName_tFileOutputDelimited_6 = null;
 				String extension_tFileOutputDelimited_6 = null;
@@ -5702,6 +5909,15 @@ public class Dimensions implements TalendJob {
 				}
 				outtFileOutputDelimited_6 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
 						new java.io.FileOutputStream(fileName_tFileOutputDelimited_6, false), "ISO-8859-15"));
+				if (filetFileOutputDelimited_6.length() == 0) {
+					outtFileOutputDelimited_6.write("Time");
+					outtFileOutputDelimited_6.write(OUT_DELIM_tFileOutputDelimited_6);
+					outtFileOutputDelimited_6.write("Hours");
+					outtFileOutputDelimited_6.write(OUT_DELIM_tFileOutputDelimited_6);
+					outtFileOutputDelimited_6.write("Minutes");
+					outtFileOutputDelimited_6.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_6);
+					outtFileOutputDelimited_6.flush();
+				}
 
 				resourceMap.put("out_tFileOutputDelimited_6", outtFileOutputDelimited_6);
 				resourceMap.put("nb_line_tFileOutputDelimited_6", nb_line_tFileOutputDelimited_6);
@@ -5874,6 +6090,17 @@ public class Dimensions implements TalendJob {
 				}
 				outtFileOutputDelimited_7 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
 						new java.io.FileOutputStream(fileName_tFileOutputDelimited_7, false), "ISO-8859-15"));
+				if (filetFileOutputDelimited_7.length() == 0) {
+					outtFileOutputDelimited_7.write("Vict_id");
+					outtFileOutputDelimited_7.write(OUT_DELIM_tFileOutputDelimited_7);
+					outtFileOutputDelimited_7.write("Vict_Age");
+					outtFileOutputDelimited_7.write(OUT_DELIM_tFileOutputDelimited_7);
+					outtFileOutputDelimited_7.write("Vict_Sex");
+					outtFileOutputDelimited_7.write(OUT_DELIM_tFileOutputDelimited_7);
+					outtFileOutputDelimited_7.write("Vict_Descent");
+					outtFileOutputDelimited_7.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_7);
+					outtFileOutputDelimited_7.flush();
+				}
 
 				resourceMap.put("out_tFileOutputDelimited_7", outtFileOutputDelimited_7);
 				resourceMap.put("nb_line_tFileOutputDelimited_7", nb_line_tFileOutputDelimited_7);
@@ -5971,7 +6198,7 @@ public class Dimensions implements TalendJob {
 					if (resourceMap.get("inIterateVComp") == null) {
 
 						if (execStat) {
-							runStat.updateStatOnConnection("row2" + iterateId, 0, 0);
+							runStat.updateStatOnConnection("clean_mocode_list" + iterateId, 0, 0);
 						}
 
 					}
@@ -5987,12 +6214,6 @@ public class Dimensions implements TalendJob {
 
 				row4Struct row4HashKey = new row4Struct();
 				row4Struct row4Default = new row4Struct();
-
-				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<clean_mocodesStruct> tHash_Lookup_clean_mocodes = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<clean_mocodesStruct>) ((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<clean_mocodesStruct>) globalMap
-						.get("tHash_Lookup_clean_mocodes"));
-
-				clean_mocodesStruct clean_mocodesHashKey = new clean_mocodesStruct();
-				clean_mocodesStruct clean_mocodesDefault = new clean_mocodesStruct();
 // ###############################        
 
 // ###############################
@@ -6007,7 +6228,6 @@ public class Dimensions implements TalendJob {
 				crimes_outputStruct crimes_output_tmp = new crimes_outputStruct();
 				weapon_outputStruct weapon_output_tmp = new weapon_outputStruct();
 				crime_outputStruct crime_output_tmp = new crime_outputStruct();
-				mode_operatoire_outputStruct mode_operatoire_output_tmp = new mode_operatoire_outputStruct();
 				day_outputStruct day_output_tmp = new day_outputStruct();
 				time_outputStruct time_output_tmp = new time_outputStruct();
 				victim_outputStruct victim_output_tmp = new victim_outputStruct();
@@ -6015,6 +6235,47 @@ public class Dimensions implements TalendJob {
 
 				/**
 				 * [tMap_1 begin ] stop
+				 */
+
+				/**
+				 * [tMap_3 begin ] start
+				 */
+
+				ok_Hash.put("tMap_3", false);
+				start_Hash.put("tMap_3", System.currentTimeMillis());
+
+				currentComponent = "tMap_3";
+
+				if (execStat) {
+					if (resourceMap.get("inIterateVComp") == null) {
+
+						if (execStat) {
+							runStat.updateStatOnConnection("row2" + iterateId, 0, 0);
+						}
+
+					}
+				}
+
+				int tos_count_tMap_3 = 0;
+
+// ###############################
+// # Lookup's keys initialization
+// ###############################        
+
+// ###############################
+// # Vars initialization
+				class Var__tMap_3__Struct {
+				}
+				Var__tMap_3__Struct Var__tMap_3 = new Var__tMap_3__Struct();
+// ###############################
+
+// ###############################
+// # Outputs initialization
+				clean_mocode_listStruct clean_mocode_list_tmp = new clean_mocode_listStruct();
+// ###############################
+
+				/**
+				 * [tMap_3 begin ] stop
 				 */
 
 				/**
@@ -6760,10 +7021,10 @@ public class Dimensions implements TalendJob {
 							if (row2 != null) {
 
 								/**
-								 * [tMap_1 main ] start
+								 * [tMap_3 main ] start
 								 */
 
-								currentComponent = "tMap_1";
+								currentComponent = "tMap_3";
 
 								// row2
 								// row2
@@ -6772,98 +7033,12 @@ public class Dimensions implements TalendJob {
 									runStat.updateStatOnConnection("row2" + iterateId, 1, 1);
 								}
 
-								boolean hasCasePrimitiveKeyWithNull_tMap_1 = false;
+								boolean hasCasePrimitiveKeyWithNull_tMap_3 = false;
 
 								// ###############################
 								// # Input tables (lookups)
-								boolean rejectedInnerJoin_tMap_1 = false;
-								boolean mainRowRejected_tMap_1 = false;
-
-								///////////////////////////////////////////////
-								// Starting Lookup Table "row4"
-								///////////////////////////////////////////////
-
-								boolean forceLooprow4 = false;
-
-								row4Struct row4ObjectFromLookup = null;
-
-								if (!rejectedInnerJoin_tMap_1) { // G_TM_M_020
-
-									hasCasePrimitiveKeyWithNull_tMap_1 = false;
-
-									row4HashKey.DR_NO = row2.DR_NO;
-
-									row4HashKey.hashCodeDirty = true;
-
-									tHash_Lookup_row4.lookup(row4HashKey);
-
-								} // G_TM_M_020
-
-								if (tHash_Lookup_row4 != null && tHash_Lookup_row4.getCount(row4HashKey) > 1) { // G 071
-
-									// System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'row4'
-									// and it contains more one result from keys : row4.DR_NO = '" +
-									// row4HashKey.DR_NO + "'");
-								} // G 071
-
-								row4Struct row4 = null;
-
-								row4Struct fromLookup_row4 = null;
-								row4 = row4Default;
-
-								if (tHash_Lookup_row4 != null && tHash_Lookup_row4.hasNext()) { // G 099
-
-									fromLookup_row4 = tHash_Lookup_row4.next();
-
-								} // G 099
-
-								if (fromLookup_row4 != null) {
-									row4 = fromLookup_row4;
-								}
-
-								///////////////////////////////////////////////
-								// Starting Lookup Table "clean_mocodes"
-								///////////////////////////////////////////////
-
-								boolean forceLoopclean_mocodes = false;
-
-								clean_mocodesStruct clean_mocodesObjectFromLookup = null;
-
-								if (!rejectedInnerJoin_tMap_1) { // G_TM_M_020
-
-									hasCasePrimitiveKeyWithNull_tMap_1 = false;
-
-									clean_mocodesHashKey.Mocodes = row2.Mocodes;
-
-									clean_mocodesHashKey.hashCodeDirty = true;
-
-									tHash_Lookup_clean_mocodes.lookup(clean_mocodesHashKey);
-
-								} // G_TM_M_020
-
-								if (tHash_Lookup_clean_mocodes != null
-										&& tHash_Lookup_clean_mocodes.getCount(clean_mocodesHashKey) > 1) { // G 071
-
-									// System.out.println("WARNING: UNIQUE MATCH is configured for the lookup
-									// 'clean_mocodes' and it contains more one result from keys :
-									// clean_mocodes.Mocodes = '" + clean_mocodesHashKey.Mocodes + "'");
-								} // G 071
-
-								clean_mocodesStruct clean_mocodes = null;
-
-								clean_mocodesStruct fromLookup_clean_mocodes = null;
-								clean_mocodes = clean_mocodesDefault;
-
-								if (tHash_Lookup_clean_mocodes != null && tHash_Lookup_clean_mocodes.hasNext()) { // G
-																													// 099
-
-									fromLookup_clean_mocodes = tHash_Lookup_clean_mocodes.next();
-
-								} // G 099
-
-								if (fromLookup_clean_mocodes != null) {
-									clean_mocodes = fromLookup_clean_mocodes;
-								}
+								boolean rejectedInnerJoin_tMap_3 = false;
+								boolean mainRowRejected_tMap_3 = false;
 
 								// ###############################
 								{ // start of Var scope
@@ -6871,1006 +7046,1074 @@ public class Dimensions implements TalendJob {
 									// ###############################
 									// # Vars tables
 
-									Var__tMap_1__Struct Var = Var__tMap_1;// ###############################
+									Var__tMap_3__Struct Var = Var__tMap_3;// ###############################
 									// ###############################
 									// # Output tables
 
-									crimes_output = null;
-									weapon_output = null;
-									crime_output = null;
-									mode_operatoire_output = null;
-									day_output = null;
-									time_output = null;
-									victim_output = null;
+									clean_mocode_list = null;
 
-// # Output table : 'crimes_output'
-									crimes_output_tmp.DR_NO = row2.DR_NO;
-									crimes_output_tmp.Date_Rptd = row2.Date_Rptd;
-									crimes_output_tmp.DATE_OCC = row2.DATE_OCC;
-									crimes_output_tmp.TIME_OCC = row2.TIME_OCC;
-									crimes_output_tmp.Crm_Cd = row2.Crm_Cd;
-									crimes_output_tmp.Crm_Cd_Desc = row2.Crm_Cd_Desc;
-									crimes_output_tmp.Mocodes = row2.Mocodes;
-									crimes_output_tmp.Vict_Age = row2.Vict_Age;
-									crimes_output_tmp.Vict_Sex = row2.Vict_Sex;
-									crimes_output_tmp.Vict_Descent = row2.Vict_Descent;
-									crimes_output_tmp.Premis_Cd = row2.Premis_Cd;
-									crimes_output_tmp.Premis_Desc = row2.Premis_Desc;
-									crimes_output_tmp.Weapon_Used_Cd = row2.Weapon_Used_Cd;
-									crimes_output_tmp.Weapon_Desc = row2.Weapon_Desc;
-									crimes_output_tmp.Crm_Cd_1 = row2.Crm_Cd_1;
-									crimes_output_tmp.Crm_Cd_2 = row2.Crm_Cd_2;
-									crimes_output_tmp.Crm_Cd_3 = row2.Crm_Cd_3;
-									crimes_output_tmp.Crm_Cd_4 = row2.Crm_Cd_4;
-									crimes_output_tmp.District = row4.District;
-									crimes_output = crimes_output_tmp;
-
-// # Output table : 'weapon_output'
-									weapon_output_tmp.Weapon_Used_Cd = row2.Weapon_Used_Cd;
-									weapon_output_tmp.Weapon_Desc = row2.Weapon_Desc;
-									weapon_output = weapon_output_tmp;
-
-// # Output table : 'crime_output'
-									crime_output_tmp.Crm_Cd = row2.Crm_Cd;
-									crime_output_tmp.Crm_Cd_Desc = row2.Crm_Cd_Desc;
-									crime_output = crime_output_tmp;
-
-// # Output table : 'mode_operatoire_output'
-									mode_operatoire_output_tmp.Mocodes = row2.Mocodes;
-									mode_operatoire_output_tmp.MoExplaination = clean_mocodes.Mocodes_Explaination;
-									mode_operatoire_output = mode_operatoire_output_tmp;
-
-// # Output table : 'day_output'
-									day_output_tmp.DATE_OCC = TalendDate.parseDate("MM/dd/yyyy",
-											StringHandling.LEFT(row2.DATE_OCC, 10));
-									day_output = day_output_tmp;
-
-// # Output table : 'time_output'
-									time_output_tmp.Time = 30
-											* Math.round(Mathematical.INT(StringHandling.RIGHT(row2.TIME_OCC, 2)) / 60)
-											+ 100 * Mathematical.INT(StringHandling.LEFT(row2.TIME_OCC,
-													-2 + StringHandling.LEN(row2.TIME_OCC)));
-									time_output_tmp.Hours = Mathematical.INT(
-											StringHandling.LEFT(row2.TIME_OCC, -2 + StringHandling.LEN(row2.TIME_OCC)));
-									time_output_tmp.Minutes = 30
-											* Math.round(Mathematical.INT(StringHandling.RIGHT(row2.TIME_OCC, 2)) / 60);
-									time_output = time_output_tmp;
-
-// # Output table : 'victim_output'
-									victim_output_tmp.Vict_id = row2.Vict_Age + row2.Vict_Sex + row2.Vict_Descent;
-									victim_output_tmp.Vict_Age = row2.Vict_Age;
-									victim_output_tmp.Vict_Sex = row2.Vict_Sex;
-									victim_output_tmp.Vict_Descent = row2.Vict_Descent;
-									victim_output = victim_output_tmp;
+// # Output table : 'clean_mocode_list'
+									clean_mocode_list_tmp.DR_NO = row2.DR_NO;
+									clean_mocode_list_tmp.Date_Rptd = row2.Date_Rptd;
+									clean_mocode_list_tmp.DATE_OCC = row2.DATE_OCC;
+									clean_mocode_list_tmp.TIME_OCC = row2.TIME_OCC;
+									clean_mocode_list_tmp.AREA = row2.AREA;
+									clean_mocode_list_tmp.AREA_NAME = row2.AREA_NAME;
+									clean_mocode_list_tmp.Rpt_Dist_No = row2.Rpt_Dist_No;
+									clean_mocode_list_tmp.Part_1_2 = row2.Part_1_2;
+									clean_mocode_list_tmp.Crm_Cd = row2.Crm_Cd;
+									clean_mocode_list_tmp.Crm_Cd_Desc = row2.Crm_Cd_Desc;
+									clean_mocode_list_tmp.Mocode1 = StringHandling.LEN(row2.Mocodes) > 3
+											? StringHandling.LEFT(row2.Mocodes, 4)
+											: null;
+									clean_mocode_list_tmp.Mocode2 = StringHandling.LEN(row2.Mocodes) > 8
+											? StringHandling.RIGHT(StringHandling.LEFT(row2.Mocodes, 9), 4)
+											: null;
+									clean_mocode_list_tmp.Mocode3 = StringHandling.LEN(row2.Mocodes) > 13
+											? StringHandling.RIGHT(StringHandling.LEFT(row2.Mocodes, 14), 4)
+											: null;
+									clean_mocode_list_tmp.Mocode4 = StringHandling.LEN(row2.Mocodes) > 18
+											? StringHandling.RIGHT(StringHandling.LEFT(row2.Mocodes, 19), 4)
+											: null;
+									clean_mocode_list_tmp.Mocode5 = StringHandling.LEN(row2.Mocodes) > 23
+											? StringHandling.RIGHT(StringHandling.LEFT(row2.Mocodes, 24), 4)
+											: null;
+									clean_mocode_list_tmp.Mocode6 = StringHandling.LEN(row2.Mocodes) > 28
+											? StringHandling.RIGHT(StringHandling.LEFT(row2.Mocodes, 29), 4)
+											: null;
+									clean_mocode_list_tmp.Mocode7 = StringHandling.LEN(row2.Mocodes) > 33
+											? StringHandling.RIGHT(StringHandling.LEFT(row2.Mocodes, 34), 4)
+											: null;
+									clean_mocode_list_tmp.Mocode8 = StringHandling.LEN(row2.Mocodes) > 38
+											? StringHandling.RIGHT(StringHandling.LEFT(row2.Mocodes, 39), 4)
+											: null;
+									clean_mocode_list_tmp.Mocode9 = StringHandling.LEN(row2.Mocodes) > 43
+											? StringHandling.RIGHT(StringHandling.LEFT(row2.Mocodes, 44), 4)
+											: null;
+									clean_mocode_list_tmp.Mocode10 = StringHandling.LEN(row2.Mocodes) > 48
+											? StringHandling.RIGHT(StringHandling.LEFT(row2.Mocodes, 49), 4)
+											: null;
+									clean_mocode_list_tmp.Mocode11 = StringHandling.LEN(row2.Mocodes) > 53
+											? StringHandling.RIGHT(StringHandling.LEFT(row2.Mocodes, 54), 4)
+											: null;
+									clean_mocode_list_tmp.Vict_Age = row2.Vict_Age;
+									clean_mocode_list_tmp.Vict_Sex = row2.Vict_Sex;
+									clean_mocode_list_tmp.Vict_Descent = row2.Vict_Descent;
+									clean_mocode_list_tmp.Premis_Cd = row2.Premis_Cd;
+									clean_mocode_list_tmp.Premis_Desc = row2.Premis_Desc;
+									clean_mocode_list_tmp.Weapon_Used_Cd = row2.Weapon_Used_Cd;
+									clean_mocode_list_tmp.Weapon_Desc = row2.Weapon_Desc;
+									clean_mocode_list_tmp.Status = row2.Status;
+									clean_mocode_list_tmp.Status_Desc = row2.Status_Desc;
+									clean_mocode_list_tmp.Crm_Cd_1 = row2.Crm_Cd_1;
+									clean_mocode_list_tmp.Crm_Cd_2 = row2.Crm_Cd_2;
+									clean_mocode_list_tmp.Crm_Cd_3 = row2.Crm_Cd_3;
+									clean_mocode_list_tmp.Crm_Cd_4 = row2.Crm_Cd_4;
+									clean_mocode_list_tmp.LOCATION = row2.LOCATION;
+									clean_mocode_list_tmp.Cross_Street = row2.Cross_Street;
+									clean_mocode_list_tmp.LAT = row2.LAT;
+									clean_mocode_list_tmp.LON = row2.LON;
+									clean_mocode_list = clean_mocode_list_tmp;
 // ###############################
 
 								} // end of Var scope
 
-								rejectedInnerJoin_tMap_1 = false;
+								rejectedInnerJoin_tMap_3 = false;
 
-								tos_count_tMap_1++;
+								tos_count_tMap_3++;
 
 								/**
-								 * [tMap_1 main ] stop
+								 * [tMap_3 main ] stop
 								 */
 
 								/**
-								 * [tMap_1 process_data_begin ] start
+								 * [tMap_3 process_data_begin ] start
 								 */
 
-								currentComponent = "tMap_1";
+								currentComponent = "tMap_3";
 
 								/**
-								 * [tMap_1 process_data_begin ] stop
+								 * [tMap_3 process_data_begin ] stop
 								 */
-// Start of branch "crimes_output"
-								if (crimes_output != null) {
+// Start of branch "clean_mocode_list"
+								if (clean_mocode_list != null) {
 
 									/**
-									 * [tFileOutputDelimited_1 main ] start
+									 * [tMap_1 main ] start
 									 */
 
-									currentComponent = "tFileOutputDelimited_1";
+									currentComponent = "tMap_1";
 
-									// crimes_output
-									// crimes_output
+									// clean_mocode_list
+									// clean_mocode_list
 
 									if (execStat) {
-										runStat.updateStatOnConnection("crimes_output" + iterateId, 1, 1);
+										runStat.updateStatOnConnection("clean_mocode_list" + iterateId, 1, 1);
 									}
 
-									StringBuilder sb_tFileOutputDelimited_1 = new StringBuilder();
-									if (crimes_output.DR_NO != null) {
-										sb_tFileOutputDelimited_1.append(crimes_output.DR_NO);
-									}
-									sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-									if (crimes_output.Date_Rptd != null) {
-										sb_tFileOutputDelimited_1.append(crimes_output.Date_Rptd);
-									}
-									sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-									if (crimes_output.DATE_OCC != null) {
-										sb_tFileOutputDelimited_1.append(crimes_output.DATE_OCC);
-									}
-									sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-									if (crimes_output.TIME_OCC != null) {
-										sb_tFileOutputDelimited_1.append(crimes_output.TIME_OCC);
-									}
-									sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-									if (crimes_output.Crm_Cd != null) {
-										sb_tFileOutputDelimited_1.append(crimes_output.Crm_Cd);
-									}
-									sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-									if (crimes_output.Crm_Cd_Desc != null) {
-										sb_tFileOutputDelimited_1.append(crimes_output.Crm_Cd_Desc);
-									}
-									sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-									if (crimes_output.Mocodes != null) {
-										sb_tFileOutputDelimited_1.append(crimes_output.Mocodes);
-									}
-									sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-									if (crimes_output.Vict_Age != null) {
-										sb_tFileOutputDelimited_1.append(crimes_output.Vict_Age);
-									}
-									sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-									if (crimes_output.Vict_Sex != null) {
-										sb_tFileOutputDelimited_1.append(crimes_output.Vict_Sex);
-									}
-									sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-									if (crimes_output.Vict_Descent != null) {
-										sb_tFileOutputDelimited_1.append(crimes_output.Vict_Descent);
-									}
-									sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-									if (crimes_output.Premis_Cd != null) {
-										sb_tFileOutputDelimited_1.append(crimes_output.Premis_Cd);
-									}
-									sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-									if (crimes_output.Premis_Desc != null) {
-										sb_tFileOutputDelimited_1.append(crimes_output.Premis_Desc);
-									}
-									sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-									if (crimes_output.Weapon_Used_Cd != null) {
-										sb_tFileOutputDelimited_1.append(crimes_output.Weapon_Used_Cd);
-									}
-									sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-									if (crimes_output.Weapon_Desc != null) {
-										sb_tFileOutputDelimited_1.append(crimes_output.Weapon_Desc);
-									}
-									sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-									if (crimes_output.Crm_Cd_1 != null) {
-										sb_tFileOutputDelimited_1.append(crimes_output.Crm_Cd_1);
-									}
-									sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-									if (crimes_output.Crm_Cd_2 != null) {
-										sb_tFileOutputDelimited_1.append(crimes_output.Crm_Cd_2);
-									}
-									sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-									if (crimes_output.Crm_Cd_3 != null) {
-										sb_tFileOutputDelimited_1.append(crimes_output.Crm_Cd_3);
-									}
-									sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-									if (crimes_output.Crm_Cd_4 != null) {
-										sb_tFileOutputDelimited_1.append(crimes_output.Crm_Cd_4);
-									}
-									sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-									if (crimes_output.District != null) {
-										sb_tFileOutputDelimited_1.append(crimes_output.District);
-									}
-									sb_tFileOutputDelimited_1.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_1);
+									boolean hasCasePrimitiveKeyWithNull_tMap_1 = false;
 
-									nb_line_tFileOutputDelimited_1++;
-									resourceMap.put("nb_line_tFileOutputDelimited_1", nb_line_tFileOutputDelimited_1);
+									// ###############################
+									// # Input tables (lookups)
+									boolean rejectedInnerJoin_tMap_1 = false;
+									boolean mainRowRejected_tMap_1 = false;
 
-									outtFileOutputDelimited_1.write(sb_tFileOutputDelimited_1.toString());
+									///////////////////////////////////////////////
+									// Starting Lookup Table "row4"
+									///////////////////////////////////////////////
 
-									tos_count_tFileOutputDelimited_1++;
+									boolean forceLooprow4 = false;
+
+									row4Struct row4ObjectFromLookup = null;
+
+									if (!rejectedInnerJoin_tMap_1) { // G_TM_M_020
+
+										hasCasePrimitiveKeyWithNull_tMap_1 = false;
+
+										row4HashKey.DR_NO = clean_mocode_list.DR_NO;
+
+										row4HashKey.hashCodeDirty = true;
+
+										tHash_Lookup_row4.lookup(row4HashKey);
+
+									} // G_TM_M_020
+
+									if (tHash_Lookup_row4 != null && tHash_Lookup_row4.getCount(row4HashKey) > 1) { // G
+																													// 071
+
+										// System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'row4'
+										// and it contains more one result from keys : row4.DR_NO = '" +
+										// row4HashKey.DR_NO + "'");
+									} // G 071
+
+									row4Struct row4 = null;
+
+									row4Struct fromLookup_row4 = null;
+									row4 = row4Default;
+
+									if (tHash_Lookup_row4 != null && tHash_Lookup_row4.hasNext()) { // G 099
+
+										fromLookup_row4 = tHash_Lookup_row4.next();
+
+									} // G 099
+
+									if (fromLookup_row4 != null) {
+										row4 = fromLookup_row4;
+									}
+
+									// ###############################
+									{ // start of Var scope
+
+										// ###############################
+										// # Vars tables
+
+										Var__tMap_1__Struct Var = Var__tMap_1;// ###############################
+										// ###############################
+										// # Output tables
+
+										crimes_output = null;
+										weapon_output = null;
+										crime_output = null;
+										day_output = null;
+										time_output = null;
+										victim_output = null;
+
+// # Output table : 'crimes_output'
+										crimes_output_tmp.DR_NO = clean_mocode_list.DR_NO;
+										crimes_output_tmp.DATE_OCC = clean_mocode_list.DATE_OCC;
+										crimes_output_tmp.TIME_OCC = clean_mocode_list.TIME_OCC;
+										crimes_output_tmp.Crm_Cd = clean_mocode_list.Crm_Cd;
+										crimes_output_tmp.Vict_Id = clean_mocode_list.Vict_Age
+												+ clean_mocode_list.Vict_Sex + clean_mocode_list.Vict_Descent;
+										crimes_output_tmp.Premis_Cd = clean_mocode_list.Premis_Cd;
+										crimes_output_tmp.Premis_Desc = clean_mocode_list.Premis_Desc;
+										crimes_output_tmp.Weapon_Used_Cd = clean_mocode_list.Weapon_Used_Cd;
+										crimes_output_tmp.Crm_Cd_1 = clean_mocode_list.Crm_Cd_1;
+										crimes_output_tmp.Crm_Cd_2 = clean_mocode_list.Crm_Cd_2;
+										crimes_output_tmp.Crm_Cd_3 = clean_mocode_list.Crm_Cd_3;
+										crimes_output_tmp.Crm_Cd_4 = clean_mocode_list.Crm_Cd_4;
+										crimes_output_tmp.District = row4.District;
+										crimes_output_tmp.Mocode1 = clean_mocode_list.Mocode1;
+										crimes_output_tmp.Mocode2 = clean_mocode_list.Mocode2;
+										crimes_output_tmp.Mocode3 = clean_mocode_list.Mocode3;
+										crimes_output_tmp.Mocode4 = clean_mocode_list.Mocode4;
+										crimes_output_tmp.Mocode5 = clean_mocode_list.Mocode5;
+										crimes_output_tmp.Mocode6 = clean_mocode_list.Mocode6;
+										crimes_output_tmp.Mocode7 = clean_mocode_list.Mocode7;
+										crimes_output_tmp.Mocode8 = clean_mocode_list.Mocode8;
+										crimes_output_tmp.Mocode9 = clean_mocode_list.Mocode9;
+										crimes_output_tmp.Mocode10 = clean_mocode_list.Mocode10;
+										crimes_output_tmp.Mocode11 = clean_mocode_list.Mocode11;
+										crimes_output = crimes_output_tmp;
+
+// # Output table : 'weapon_output'
+										weapon_output_tmp.Weapon_Used_Cd = clean_mocode_list.Weapon_Used_Cd;
+										weapon_output_tmp.Weapon_Desc = clean_mocode_list.Weapon_Desc;
+										weapon_output = weapon_output_tmp;
+
+// # Output table : 'crime_output'
+										crime_output_tmp.Crm_Cd = clean_mocode_list.Crm_Cd;
+										crime_output_tmp.Crm_Cd_Desc = clean_mocode_list.Crm_Cd_Desc;
+										crime_output = crime_output_tmp;
+
+// # Output table : 'day_output'
+										day_output_tmp.DATE_OCC = TalendDate.parseDate("MM/dd/yyyy",
+												StringHandling.LEFT(clean_mocode_list.DATE_OCC, 10));
+										day_output = day_output_tmp;
+
+// # Output table : 'time_output'
+										time_output_tmp.Time = 30 * Math.round(
+												(1 + Mathematical.INT(StringHandling.RIGHT(row2.TIME_OCC, 2))) / 60)
+												+ 100 * Mathematical.INT(StringHandling.LEFT(clean_mocode_list.TIME_OCC,
+														-2 + StringHandling.LEN(clean_mocode_list.TIME_OCC)));
+										time_output_tmp.Hours = Mathematical
+												.INT(StringHandling.LEFT(clean_mocode_list.TIME_OCC,
+														-2 + StringHandling.LEN(clean_mocode_list.TIME_OCC)));
+										time_output_tmp.Minutes = 30 * Math.round((1
+												+ Mathematical.INT(StringHandling.RIGHT(clean_mocode_list.TIME_OCC, 2)))
+												/ 60);
+										time_output = time_output_tmp;
+
+// # Output table : 'victim_output'
+										victim_output_tmp.Vict_id = clean_mocode_list.Vict_Age
+												+ clean_mocode_list.Vict_Sex + clean_mocode_list.Vict_Descent;
+										victim_output_tmp.Vict_Age = clean_mocode_list.Vict_Age;
+										victim_output_tmp.Vict_Sex = clean_mocode_list.Vict_Sex;
+										victim_output_tmp.Vict_Descent = clean_mocode_list.Vict_Descent;
+										victim_output = victim_output_tmp;
+// ###############################
+
+									} // end of Var scope
+
+									rejectedInnerJoin_tMap_1 = false;
+
+									tos_count_tMap_1++;
 
 									/**
-									 * [tFileOutputDelimited_1 main ] stop
+									 * [tMap_1 main ] stop
 									 */
 
 									/**
-									 * [tFileOutputDelimited_1 process_data_begin ] start
+									 * [tMap_1 process_data_begin ] start
 									 */
 
-									currentComponent = "tFileOutputDelimited_1";
+									currentComponent = "tMap_1";
 
 									/**
-									 * [tFileOutputDelimited_1 process_data_begin ] stop
+									 * [tMap_1 process_data_begin ] stop
 									 */
+// Start of branch "crimes_output"
+									if (crimes_output != null) {
 
-									/**
-									 * [tFileOutputDelimited_1 process_data_end ] start
-									 */
+										/**
+										 * [tFileOutputDelimited_1 main ] start
+										 */
 
-									currentComponent = "tFileOutputDelimited_1";
+										currentComponent = "tFileOutputDelimited_1";
 
-									/**
-									 * [tFileOutputDelimited_1 process_data_end ] stop
-									 */
+										// crimes_output
+										// crimes_output
 
-								} // End of branch "crimes_output"
+										if (execStat) {
+											runStat.updateStatOnConnection("crimes_output" + iterateId, 1, 1);
+										}
+
+										StringBuilder sb_tFileOutputDelimited_1 = new StringBuilder();
+										if (crimes_output.Vict_Id != null) {
+											sb_tFileOutputDelimited_1.append(crimes_output.Vict_Id);
+										}
+										sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+										if (crimes_output.Mocode1 != null) {
+											sb_tFileOutputDelimited_1.append(crimes_output.Mocode1);
+										}
+										sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+										if (crimes_output.Mocode2 != null) {
+											sb_tFileOutputDelimited_1.append(crimes_output.Mocode2);
+										}
+										sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+										if (crimes_output.Mocode3 != null) {
+											sb_tFileOutputDelimited_1.append(crimes_output.Mocode3);
+										}
+										sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+										if (crimes_output.Mocode4 != null) {
+											sb_tFileOutputDelimited_1.append(crimes_output.Mocode4);
+										}
+										sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+										if (crimes_output.Mocode5 != null) {
+											sb_tFileOutputDelimited_1.append(crimes_output.Mocode5);
+										}
+										sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+										if (crimes_output.Mocode6 != null) {
+											sb_tFileOutputDelimited_1.append(crimes_output.Mocode6);
+										}
+										sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+										if (crimes_output.Mocode7 != null) {
+											sb_tFileOutputDelimited_1.append(crimes_output.Mocode7);
+										}
+										sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+										if (crimes_output.Mocode8 != null) {
+											sb_tFileOutputDelimited_1.append(crimes_output.Mocode8);
+										}
+										sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+										if (crimes_output.Mocode9 != null) {
+											sb_tFileOutputDelimited_1.append(crimes_output.Mocode9);
+										}
+										sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+										if (crimes_output.Mocode10 != null) {
+											sb_tFileOutputDelimited_1.append(crimes_output.Mocode10);
+										}
+										sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+										if (crimes_output.Mocode11 != null) {
+											sb_tFileOutputDelimited_1.append(crimes_output.Mocode11);
+										}
+										sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+										if (crimes_output.DR_NO != null) {
+											sb_tFileOutputDelimited_1.append(crimes_output.DR_NO);
+										}
+										sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+										if (crimes_output.DATE_OCC != null) {
+											sb_tFileOutputDelimited_1.append(crimes_output.DATE_OCC);
+										}
+										sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+										if (crimes_output.TIME_OCC != null) {
+											sb_tFileOutputDelimited_1.append(crimes_output.TIME_OCC);
+										}
+										sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+										if (crimes_output.Crm_Cd != null) {
+											sb_tFileOutputDelimited_1.append(crimes_output.Crm_Cd);
+										}
+										sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+										if (crimes_output.Premis_Cd != null) {
+											sb_tFileOutputDelimited_1.append(crimes_output.Premis_Cd);
+										}
+										sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+										if (crimes_output.Premis_Desc != null) {
+											sb_tFileOutputDelimited_1.append(crimes_output.Premis_Desc);
+										}
+										sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+										if (crimes_output.Weapon_Used_Cd != null) {
+											sb_tFileOutputDelimited_1.append(crimes_output.Weapon_Used_Cd);
+										}
+										sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+										if (crimes_output.Crm_Cd_1 != null) {
+											sb_tFileOutputDelimited_1.append(crimes_output.Crm_Cd_1);
+										}
+										sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+										if (crimes_output.Crm_Cd_2 != null) {
+											sb_tFileOutputDelimited_1.append(crimes_output.Crm_Cd_2);
+										}
+										sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+										if (crimes_output.Crm_Cd_3 != null) {
+											sb_tFileOutputDelimited_1.append(crimes_output.Crm_Cd_3);
+										}
+										sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+										if (crimes_output.Crm_Cd_4 != null) {
+											sb_tFileOutputDelimited_1.append(crimes_output.Crm_Cd_4);
+										}
+										sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+										if (crimes_output.District != null) {
+											sb_tFileOutputDelimited_1.append(crimes_output.District);
+										}
+										sb_tFileOutputDelimited_1.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_1);
+
+										nb_line_tFileOutputDelimited_1++;
+										resourceMap.put("nb_line_tFileOutputDelimited_1",
+												nb_line_tFileOutputDelimited_1);
+
+										outtFileOutputDelimited_1.write(sb_tFileOutputDelimited_1.toString());
+
+										tos_count_tFileOutputDelimited_1++;
+
+										/**
+										 * [tFileOutputDelimited_1 main ] stop
+										 */
+
+										/**
+										 * [tFileOutputDelimited_1 process_data_begin ] start
+										 */
+
+										currentComponent = "tFileOutputDelimited_1";
+
+										/**
+										 * [tFileOutputDelimited_1 process_data_begin ] stop
+										 */
+
+										/**
+										 * [tFileOutputDelimited_1 process_data_end ] start
+										 */
+
+										currentComponent = "tFileOutputDelimited_1";
+
+										/**
+										 * [tFileOutputDelimited_1 process_data_end ] stop
+										 */
+
+									} // End of branch "crimes_output"
 
 // Start of branch "weapon_output"
-								if (weapon_output != null) {
-
-									/**
-									 * [tUniqRow_3 main ] start
-									 */
-
-									currentComponent = "tUniqRow_3";
-
-									// weapon_output
-									// weapon_output
-
-									if (execStat) {
-										runStat.updateStatOnConnection("weapon_output" + iterateId, 1, 1);
-									}
-
-									row5 = null;
-									if (weapon_output.Weapon_Used_Cd == null) {
-										finder_tUniqRow_3.Weapon_Used_Cd = null;
-									} else {
-										finder_tUniqRow_3.Weapon_Used_Cd = weapon_output.Weapon_Used_Cd.toLowerCase();
-									}
-									finder_tUniqRow_3.hashCodeDirty = true;
-									if (!keystUniqRow_3.contains(finder_tUniqRow_3)) {
-										KeyStruct_tUniqRow_3 new_tUniqRow_3 = new KeyStruct_tUniqRow_3();
-
-										if (weapon_output.Weapon_Used_Cd == null) {
-											new_tUniqRow_3.Weapon_Used_Cd = null;
-										} else {
-											new_tUniqRow_3.Weapon_Used_Cd = weapon_output.Weapon_Used_Cd.toLowerCase();
-										}
-
-										keystUniqRow_3.add(new_tUniqRow_3);
-										if (row5 == null) {
-
-											row5 = new row5Struct();
-										}
-										row5.Weapon_Used_Cd = weapon_output.Weapon_Used_Cd;
-										row5.Weapon_Desc = weapon_output.Weapon_Desc;
-										nb_uniques_tUniqRow_3++;
-									} else {
-										nb_duplicates_tUniqRow_3++;
-									}
-
-									tos_count_tUniqRow_3++;
-
-									/**
-									 * [tUniqRow_3 main ] stop
-									 */
-
-									/**
-									 * [tUniqRow_3 process_data_begin ] start
-									 */
-
-									currentComponent = "tUniqRow_3";
-
-									/**
-									 * [tUniqRow_3 process_data_begin ] stop
-									 */
-// Start of branch "row5"
-									if (row5 != null) {
+									if (weapon_output != null) {
 
 										/**
-										 * [tFileOutputDelimited_2 main ] start
+										 * [tUniqRow_3 main ] start
 										 */
 
-										currentComponent = "tFileOutputDelimited_2";
+										currentComponent = "tUniqRow_3";
 
-										// row5
-										// row5
+										// weapon_output
+										// weapon_output
 
 										if (execStat) {
-											runStat.updateStatOnConnection("row5" + iterateId, 1, 1);
+											runStat.updateStatOnConnection("weapon_output" + iterateId, 1, 1);
 										}
 
-										StringBuilder sb_tFileOutputDelimited_2 = new StringBuilder();
-										if (row5.Weapon_Used_Cd != null) {
-											sb_tFileOutputDelimited_2.append(row5.Weapon_Used_Cd);
+										row5 = null;
+										if (weapon_output.Weapon_Used_Cd == null) {
+											finder_tUniqRow_3.Weapon_Used_Cd = null;
+										} else {
+											finder_tUniqRow_3.Weapon_Used_Cd = weapon_output.Weapon_Used_Cd
+													.toLowerCase();
 										}
-										sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-										if (row5.Weapon_Desc != null) {
-											sb_tFileOutputDelimited_2.append(row5.Weapon_Desc);
+										finder_tUniqRow_3.hashCodeDirty = true;
+										if (!keystUniqRow_3.contains(finder_tUniqRow_3)) {
+											KeyStruct_tUniqRow_3 new_tUniqRow_3 = new KeyStruct_tUniqRow_3();
+
+											if (weapon_output.Weapon_Used_Cd == null) {
+												new_tUniqRow_3.Weapon_Used_Cd = null;
+											} else {
+												new_tUniqRow_3.Weapon_Used_Cd = weapon_output.Weapon_Used_Cd
+														.toLowerCase();
+											}
+
+											keystUniqRow_3.add(new_tUniqRow_3);
+											if (row5 == null) {
+
+												row5 = new row5Struct();
+											}
+											row5.Weapon_Used_Cd = weapon_output.Weapon_Used_Cd;
+											row5.Weapon_Desc = weapon_output.Weapon_Desc;
+											nb_uniques_tUniqRow_3++;
+										} else {
+											nb_duplicates_tUniqRow_3++;
 										}
-										sb_tFileOutputDelimited_2.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_2);
 
-										nb_line_tFileOutputDelimited_2++;
-										resourceMap.put("nb_line_tFileOutputDelimited_2",
-												nb_line_tFileOutputDelimited_2);
-
-										outtFileOutputDelimited_2.write(sb_tFileOutputDelimited_2.toString());
-
-										tos_count_tFileOutputDelimited_2++;
+										tos_count_tUniqRow_3++;
 
 										/**
-										 * [tFileOutputDelimited_2 main ] stop
+										 * [tUniqRow_3 main ] stop
 										 */
 
 										/**
-										 * [tFileOutputDelimited_2 process_data_begin ] start
+										 * [tUniqRow_3 process_data_begin ] start
 										 */
 
-										currentComponent = "tFileOutputDelimited_2";
+										currentComponent = "tUniqRow_3";
 
 										/**
-										 * [tFileOutputDelimited_2 process_data_begin ] stop
+										 * [tUniqRow_3 process_data_begin ] stop
 										 */
+// Start of branch "row5"
+										if (row5 != null) {
+
+											/**
+											 * [tFileOutputDelimited_2 main ] start
+											 */
+
+											currentComponent = "tFileOutputDelimited_2";
+
+											// row5
+											// row5
+
+											if (execStat) {
+												runStat.updateStatOnConnection("row5" + iterateId, 1, 1);
+											}
+
+											StringBuilder sb_tFileOutputDelimited_2 = new StringBuilder();
+											if (row5.Weapon_Used_Cd != null) {
+												sb_tFileOutputDelimited_2.append(row5.Weapon_Used_Cd);
+											}
+											sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
+											if (row5.Weapon_Desc != null) {
+												sb_tFileOutputDelimited_2.append(row5.Weapon_Desc);
+											}
+											sb_tFileOutputDelimited_2.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_2);
+
+											nb_line_tFileOutputDelimited_2++;
+											resourceMap.put("nb_line_tFileOutputDelimited_2",
+													nb_line_tFileOutputDelimited_2);
+
+											outtFileOutputDelimited_2.write(sb_tFileOutputDelimited_2.toString());
+
+											tos_count_tFileOutputDelimited_2++;
+
+											/**
+											 * [tFileOutputDelimited_2 main ] stop
+											 */
+
+											/**
+											 * [tFileOutputDelimited_2 process_data_begin ] start
+											 */
+
+											currentComponent = "tFileOutputDelimited_2";
+
+											/**
+											 * [tFileOutputDelimited_2 process_data_begin ] stop
+											 */
+
+											/**
+											 * [tFileOutputDelimited_2 process_data_end ] start
+											 */
+
+											currentComponent = "tFileOutputDelimited_2";
+
+											/**
+											 * [tFileOutputDelimited_2 process_data_end ] stop
+											 */
+
+										} // End of branch "row5"
 
 										/**
-										 * [tFileOutputDelimited_2 process_data_end ] start
+										 * [tUniqRow_3 process_data_end ] start
 										 */
 
-										currentComponent = "tFileOutputDelimited_2";
+										currentComponent = "tUniqRow_3";
 
 										/**
-										 * [tFileOutputDelimited_2 process_data_end ] stop
+										 * [tUniqRow_3 process_data_end ] stop
 										 */
 
-									} // End of branch "row5"
-
-									/**
-									 * [tUniqRow_3 process_data_end ] start
-									 */
-
-									currentComponent = "tUniqRow_3";
-
-									/**
-									 * [tUniqRow_3 process_data_end ] stop
-									 */
-
-								} // End of branch "weapon_output"
+									} // End of branch "weapon_output"
 
 // Start of branch "crime_output"
-								if (crime_output != null) {
-
-									/**
-									 * [tUniqRow_4 main ] start
-									 */
-
-									currentComponent = "tUniqRow_4";
-
-									// crime_output
-									// crime_output
-
-									if (execStat) {
-										runStat.updateStatOnConnection("crime_output" + iterateId, 1, 1);
-									}
-
-									row6 = null;
-									finder_tUniqRow_4.Crm_Cd = crime_output.Crm_Cd;
-									finder_tUniqRow_4.hashCodeDirty = true;
-									if (!keystUniqRow_4.contains(finder_tUniqRow_4)) {
-										KeyStruct_tUniqRow_4 new_tUniqRow_4 = new KeyStruct_tUniqRow_4();
-
-										new_tUniqRow_4.Crm_Cd = crime_output.Crm_Cd;
-
-										keystUniqRow_4.add(new_tUniqRow_4);
-										if (row6 == null) {
-
-											row6 = new row6Struct();
-										}
-										row6.Crm_Cd = crime_output.Crm_Cd;
-										row6.Crm_Cd_Desc = crime_output.Crm_Cd_Desc;
-										nb_uniques_tUniqRow_4++;
-									} else {
-										nb_duplicates_tUniqRow_4++;
-									}
-
-									tos_count_tUniqRow_4++;
-
-									/**
-									 * [tUniqRow_4 main ] stop
-									 */
-
-									/**
-									 * [tUniqRow_4 process_data_begin ] start
-									 */
-
-									currentComponent = "tUniqRow_4";
-
-									/**
-									 * [tUniqRow_4 process_data_begin ] stop
-									 */
-// Start of branch "row6"
-									if (row6 != null) {
+									if (crime_output != null) {
 
 										/**
-										 * [tFileOutputDelimited_3 main ] start
+										 * [tUniqRow_4 main ] start
 										 */
 
-										currentComponent = "tFileOutputDelimited_3";
+										currentComponent = "tUniqRow_4";
 
-										// row6
-										// row6
+										// crime_output
+										// crime_output
 
 										if (execStat) {
-											runStat.updateStatOnConnection("row6" + iterateId, 1, 1);
+											runStat.updateStatOnConnection("crime_output" + iterateId, 1, 1);
 										}
 
-										StringBuilder sb_tFileOutputDelimited_3 = new StringBuilder();
-										if (row6.Crm_Cd != null) {
-											sb_tFileOutputDelimited_3.append(row6.Crm_Cd);
-										}
-										sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
-										if (row6.Crm_Cd_Desc != null) {
-											sb_tFileOutputDelimited_3.append(row6.Crm_Cd_Desc);
-										}
-										sb_tFileOutputDelimited_3.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_3);
+										row6 = null;
+										finder_tUniqRow_4.Crm_Cd = crime_output.Crm_Cd;
+										finder_tUniqRow_4.hashCodeDirty = true;
+										if (!keystUniqRow_4.contains(finder_tUniqRow_4)) {
+											KeyStruct_tUniqRow_4 new_tUniqRow_4 = new KeyStruct_tUniqRow_4();
 
-										nb_line_tFileOutputDelimited_3++;
-										resourceMap.put("nb_line_tFileOutputDelimited_3",
-												nb_line_tFileOutputDelimited_3);
+											new_tUniqRow_4.Crm_Cd = crime_output.Crm_Cd;
 
-										outtFileOutputDelimited_3.write(sb_tFileOutputDelimited_3.toString());
+											keystUniqRow_4.add(new_tUniqRow_4);
+											if (row6 == null) {
 
-										tos_count_tFileOutputDelimited_3++;
-
-										/**
-										 * [tFileOutputDelimited_3 main ] stop
-										 */
-
-										/**
-										 * [tFileOutputDelimited_3 process_data_begin ] start
-										 */
-
-										currentComponent = "tFileOutputDelimited_3";
-
-										/**
-										 * [tFileOutputDelimited_3 process_data_begin ] stop
-										 */
-
-										/**
-										 * [tFileOutputDelimited_3 process_data_end ] start
-										 */
-
-										currentComponent = "tFileOutputDelimited_3";
-
-										/**
-										 * [tFileOutputDelimited_3 process_data_end ] stop
-										 */
-
-									} // End of branch "row6"
-
-									/**
-									 * [tUniqRow_4 process_data_end ] start
-									 */
-
-									currentComponent = "tUniqRow_4";
-
-									/**
-									 * [tUniqRow_4 process_data_end ] stop
-									 */
-
-								} // End of branch "crime_output"
-
-// Start of branch "mode_operatoire_output"
-								if (mode_operatoire_output != null) {
-
-									/**
-									 * [tUniqRow_5 main ] start
-									 */
-
-									currentComponent = "tUniqRow_5";
-
-									// mode_operatoire_output
-									// mode_operatoire_output
-
-									if (execStat) {
-										runStat.updateStatOnConnection("mode_operatoire_output" + iterateId, 1, 1);
-									}
-
-									row7 = null;
-									if (mode_operatoire_output.Mocodes == null) {
-										finder_tUniqRow_5.Mocodes = null;
-									} else {
-										finder_tUniqRow_5.Mocodes = mode_operatoire_output.Mocodes.toLowerCase();
-									}
-									finder_tUniqRow_5.hashCodeDirty = true;
-									if (!keystUniqRow_5.contains(finder_tUniqRow_5)) {
-										KeyStruct_tUniqRow_5 new_tUniqRow_5 = new KeyStruct_tUniqRow_5();
-
-										if (mode_operatoire_output.Mocodes == null) {
-											new_tUniqRow_5.Mocodes = null;
+												row6 = new row6Struct();
+											}
+											row6.Crm_Cd = crime_output.Crm_Cd;
+											row6.Crm_Cd_Desc = crime_output.Crm_Cd_Desc;
+											nb_uniques_tUniqRow_4++;
 										} else {
-											new_tUniqRow_5.Mocodes = mode_operatoire_output.Mocodes.toLowerCase();
+											nb_duplicates_tUniqRow_4++;
 										}
 
-										keystUniqRow_5.add(new_tUniqRow_5);
-										if (row7 == null) {
-
-											row7 = new row7Struct();
-										}
-										row7.Mocodes = mode_operatoire_output.Mocodes;
-										row7.MoExplaination = mode_operatoire_output.MoExplaination;
-										nb_uniques_tUniqRow_5++;
-									} else {
-										nb_duplicates_tUniqRow_5++;
-									}
-
-									tos_count_tUniqRow_5++;
-
-									/**
-									 * [tUniqRow_5 main ] stop
-									 */
-
-									/**
-									 * [tUniqRow_5 process_data_begin ] start
-									 */
-
-									currentComponent = "tUniqRow_5";
-
-									/**
-									 * [tUniqRow_5 process_data_begin ] stop
-									 */
-// Start of branch "row7"
-									if (row7 != null) {
+										tos_count_tUniqRow_4++;
 
 										/**
-										 * [tFileOutputDelimited_4 main ] start
-										 */
-
-										currentComponent = "tFileOutputDelimited_4";
-
-										// row7
-										// row7
-
-										if (execStat) {
-											runStat.updateStatOnConnection("row7" + iterateId, 1, 1);
-										}
-
-										StringBuilder sb_tFileOutputDelimited_4 = new StringBuilder();
-										if (row7.Mocodes != null) {
-											sb_tFileOutputDelimited_4.append(row7.Mocodes);
-										}
-										sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
-										if (row7.MoExplaination != null) {
-											sb_tFileOutputDelimited_4.append(row7.MoExplaination);
-										}
-										sb_tFileOutputDelimited_4.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_4);
-
-										nb_line_tFileOutputDelimited_4++;
-										resourceMap.put("nb_line_tFileOutputDelimited_4",
-												nb_line_tFileOutputDelimited_4);
-
-										outtFileOutputDelimited_4.write(sb_tFileOutputDelimited_4.toString());
-
-										tos_count_tFileOutputDelimited_4++;
-
-										/**
-										 * [tFileOutputDelimited_4 main ] stop
+										 * [tUniqRow_4 main ] stop
 										 */
 
 										/**
-										 * [tFileOutputDelimited_4 process_data_begin ] start
+										 * [tUniqRow_4 process_data_begin ] start
 										 */
 
-										currentComponent = "tFileOutputDelimited_4";
+										currentComponent = "tUniqRow_4";
 
 										/**
-										 * [tFileOutputDelimited_4 process_data_begin ] stop
+										 * [tUniqRow_4 process_data_begin ] stop
 										 */
+// Start of branch "row6"
+										if (row6 != null) {
+
+											/**
+											 * [tFileOutputDelimited_3 main ] start
+											 */
+
+											currentComponent = "tFileOutputDelimited_3";
+
+											// row6
+											// row6
+
+											if (execStat) {
+												runStat.updateStatOnConnection("row6" + iterateId, 1, 1);
+											}
+
+											StringBuilder sb_tFileOutputDelimited_3 = new StringBuilder();
+											if (row6.Crm_Cd != null) {
+												sb_tFileOutputDelimited_3.append(row6.Crm_Cd);
+											}
+											sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
+											if (row6.Crm_Cd_Desc != null) {
+												sb_tFileOutputDelimited_3.append(row6.Crm_Cd_Desc);
+											}
+											sb_tFileOutputDelimited_3.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_3);
+
+											nb_line_tFileOutputDelimited_3++;
+											resourceMap.put("nb_line_tFileOutputDelimited_3",
+													nb_line_tFileOutputDelimited_3);
+
+											outtFileOutputDelimited_3.write(sb_tFileOutputDelimited_3.toString());
+
+											tos_count_tFileOutputDelimited_3++;
+
+											/**
+											 * [tFileOutputDelimited_3 main ] stop
+											 */
+
+											/**
+											 * [tFileOutputDelimited_3 process_data_begin ] start
+											 */
+
+											currentComponent = "tFileOutputDelimited_3";
+
+											/**
+											 * [tFileOutputDelimited_3 process_data_begin ] stop
+											 */
+
+											/**
+											 * [tFileOutputDelimited_3 process_data_end ] start
+											 */
+
+											currentComponent = "tFileOutputDelimited_3";
+
+											/**
+											 * [tFileOutputDelimited_3 process_data_end ] stop
+											 */
+
+										} // End of branch "row6"
 
 										/**
-										 * [tFileOutputDelimited_4 process_data_end ] start
+										 * [tUniqRow_4 process_data_end ] start
 										 */
 
-										currentComponent = "tFileOutputDelimited_4";
+										currentComponent = "tUniqRow_4";
 
 										/**
-										 * [tFileOutputDelimited_4 process_data_end ] stop
+										 * [tUniqRow_4 process_data_end ] stop
 										 */
 
-									} // End of branch "row7"
-
-									/**
-									 * [tUniqRow_5 process_data_end ] start
-									 */
-
-									currentComponent = "tUniqRow_5";
-
-									/**
-									 * [tUniqRow_5 process_data_end ] stop
-									 */
-
-								} // End of branch "mode_operatoire_output"
+									} // End of branch "crime_output"
 
 // Start of branch "day_output"
-								if (day_output != null) {
-
-									/**
-									 * [tUniqRow_6 main ] start
-									 */
-
-									currentComponent = "tUniqRow_6";
-
-									// day_output
-									// day_output
-
-									if (execStat) {
-										runStat.updateStatOnConnection("day_output" + iterateId, 1, 1);
-									}
-
-									row8 = null;
-									finder_tUniqRow_6.DATE_OCC = day_output.DATE_OCC;
-									finder_tUniqRow_6.hashCodeDirty = true;
-									if (!keystUniqRow_6.contains(finder_tUniqRow_6)) {
-										KeyStruct_tUniqRow_6 new_tUniqRow_6 = new KeyStruct_tUniqRow_6();
-
-										new_tUniqRow_6.DATE_OCC = day_output.DATE_OCC;
-
-										keystUniqRow_6.add(new_tUniqRow_6);
-										if (row8 == null) {
-
-											row8 = new row8Struct();
-										}
-										row8.DATE_OCC = day_output.DATE_OCC;
-										nb_uniques_tUniqRow_6++;
-									} else {
-										nb_duplicates_tUniqRow_6++;
-									}
-
-									tos_count_tUniqRow_6++;
-
-									/**
-									 * [tUniqRow_6 main ] stop
-									 */
-
-									/**
-									 * [tUniqRow_6 process_data_begin ] start
-									 */
-
-									currentComponent = "tUniqRow_6";
-
-									/**
-									 * [tUniqRow_6 process_data_begin ] stop
-									 */
-// Start of branch "row8"
-									if (row8 != null) {
+									if (day_output != null) {
 
 										/**
-										 * [tFileOutputDelimited_5 main ] start
+										 * [tUniqRow_6 main ] start
 										 */
 
-										currentComponent = "tFileOutputDelimited_5";
+										currentComponent = "tUniqRow_6";
 
-										// row8
-										// row8
+										// day_output
+										// day_output
 
 										if (execStat) {
-											runStat.updateStatOnConnection("row8" + iterateId, 1, 1);
+											runStat.updateStatOnConnection("day_output" + iterateId, 1, 1);
 										}
 
-										StringBuilder sb_tFileOutputDelimited_5 = new StringBuilder();
-										if (row8.DATE_OCC != null) {
-											sb_tFileOutputDelimited_5
-													.append(FormatterUtils.format_Date(row8.DATE_OCC, "dd-MM-yyyy"));
+										row8 = null;
+										finder_tUniqRow_6.DATE_OCC = day_output.DATE_OCC;
+										finder_tUniqRow_6.hashCodeDirty = true;
+										if (!keystUniqRow_6.contains(finder_tUniqRow_6)) {
+											KeyStruct_tUniqRow_6 new_tUniqRow_6 = new KeyStruct_tUniqRow_6();
+
+											new_tUniqRow_6.DATE_OCC = day_output.DATE_OCC;
+
+											keystUniqRow_6.add(new_tUniqRow_6);
+											if (row8 == null) {
+
+												row8 = new row8Struct();
+											}
+											row8.DATE_OCC = day_output.DATE_OCC;
+											nb_uniques_tUniqRow_6++;
+										} else {
+											nb_duplicates_tUniqRow_6++;
 										}
-										sb_tFileOutputDelimited_5.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_5);
 
-										nb_line_tFileOutputDelimited_5++;
-										resourceMap.put("nb_line_tFileOutputDelimited_5",
-												nb_line_tFileOutputDelimited_5);
-
-										outtFileOutputDelimited_5.write(sb_tFileOutputDelimited_5.toString());
-
-										tos_count_tFileOutputDelimited_5++;
+										tos_count_tUniqRow_6++;
 
 										/**
-										 * [tFileOutputDelimited_5 main ] stop
+										 * [tUniqRow_6 main ] stop
 										 */
 
 										/**
-										 * [tFileOutputDelimited_5 process_data_begin ] start
+										 * [tUniqRow_6 process_data_begin ] start
 										 */
 
-										currentComponent = "tFileOutputDelimited_5";
+										currentComponent = "tUniqRow_6";
 
 										/**
-										 * [tFileOutputDelimited_5 process_data_begin ] stop
+										 * [tUniqRow_6 process_data_begin ] stop
 										 */
+// Start of branch "row8"
+										if (row8 != null) {
+
+											/**
+											 * [tFileOutputDelimited_5 main ] start
+											 */
+
+											currentComponent = "tFileOutputDelimited_5";
+
+											// row8
+											// row8
+
+											if (execStat) {
+												runStat.updateStatOnConnection("row8" + iterateId, 1, 1);
+											}
+
+											StringBuilder sb_tFileOutputDelimited_5 = new StringBuilder();
+											if (row8.DATE_OCC != null) {
+												sb_tFileOutputDelimited_5.append(
+														FormatterUtils.format_Date(row8.DATE_OCC, "dd-MM-yyyy"));
+											}
+											sb_tFileOutputDelimited_5.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_5);
+
+											nb_line_tFileOutputDelimited_5++;
+											resourceMap.put("nb_line_tFileOutputDelimited_5",
+													nb_line_tFileOutputDelimited_5);
+
+											outtFileOutputDelimited_5.write(sb_tFileOutputDelimited_5.toString());
+
+											tos_count_tFileOutputDelimited_5++;
+
+											/**
+											 * [tFileOutputDelimited_5 main ] stop
+											 */
+
+											/**
+											 * [tFileOutputDelimited_5 process_data_begin ] start
+											 */
+
+											currentComponent = "tFileOutputDelimited_5";
+
+											/**
+											 * [tFileOutputDelimited_5 process_data_begin ] stop
+											 */
+
+											/**
+											 * [tFileOutputDelimited_5 process_data_end ] start
+											 */
+
+											currentComponent = "tFileOutputDelimited_5";
+
+											/**
+											 * [tFileOutputDelimited_5 process_data_end ] stop
+											 */
+
+										} // End of branch "row8"
 
 										/**
-										 * [tFileOutputDelimited_5 process_data_end ] start
+										 * [tUniqRow_6 process_data_end ] start
 										 */
 
-										currentComponent = "tFileOutputDelimited_5";
+										currentComponent = "tUniqRow_6";
 
 										/**
-										 * [tFileOutputDelimited_5 process_data_end ] stop
+										 * [tUniqRow_6 process_data_end ] stop
 										 */
 
-									} // End of branch "row8"
-
-									/**
-									 * [tUniqRow_6 process_data_end ] start
-									 */
-
-									currentComponent = "tUniqRow_6";
-
-									/**
-									 * [tUniqRow_6 process_data_end ] stop
-									 */
-
-								} // End of branch "day_output"
+									} // End of branch "day_output"
 
 // Start of branch "time_output"
-								if (time_output != null) {
-
-									/**
-									 * [tUniqRow_7 main ] start
-									 */
-
-									currentComponent = "tUniqRow_7";
-
-									// time_output
-									// time_output
-
-									if (execStat) {
-										runStat.updateStatOnConnection("time_output" + iterateId, 1, 1);
-									}
-
-									row9 = null;
-									finder_tUniqRow_7.Time = time_output.Time;
-									finder_tUniqRow_7.hashCodeDirty = true;
-									if (!keystUniqRow_7.contains(finder_tUniqRow_7)) {
-										KeyStruct_tUniqRow_7 new_tUniqRow_7 = new KeyStruct_tUniqRow_7();
-
-										new_tUniqRow_7.Time = time_output.Time;
-
-										keystUniqRow_7.add(new_tUniqRow_7);
-										if (row9 == null) {
-
-											row9 = new row9Struct();
-										}
-										row9.Time = time_output.Time;
-										row9.Hours = time_output.Hours;
-										row9.Minutes = time_output.Minutes;
-										nb_uniques_tUniqRow_7++;
-									} else {
-										nb_duplicates_tUniqRow_7++;
-									}
-
-									tos_count_tUniqRow_7++;
-
-									/**
-									 * [tUniqRow_7 main ] stop
-									 */
-
-									/**
-									 * [tUniqRow_7 process_data_begin ] start
-									 */
-
-									currentComponent = "tUniqRow_7";
-
-									/**
-									 * [tUniqRow_7 process_data_begin ] stop
-									 */
-// Start of branch "row9"
-									if (row9 != null) {
+									if (time_output != null) {
 
 										/**
-										 * [tFileOutputDelimited_6 main ] start
+										 * [tUniqRow_7 main ] start
 										 */
 
-										currentComponent = "tFileOutputDelimited_6";
+										currentComponent = "tUniqRow_7";
 
-										// row9
-										// row9
+										// time_output
+										// time_output
 
 										if (execStat) {
-											runStat.updateStatOnConnection("row9" + iterateId, 1, 1);
+											runStat.updateStatOnConnection("time_output" + iterateId, 1, 1);
 										}
 
-										StringBuilder sb_tFileOutputDelimited_6 = new StringBuilder();
-										if (row9.Time != null) {
-											sb_tFileOutputDelimited_6.append(row9.Time);
+										row9 = null;
+										finder_tUniqRow_7.Time = time_output.Time;
+										finder_tUniqRow_7.hashCodeDirty = true;
+										if (!keystUniqRow_7.contains(finder_tUniqRow_7)) {
+											KeyStruct_tUniqRow_7 new_tUniqRow_7 = new KeyStruct_tUniqRow_7();
+
+											new_tUniqRow_7.Time = time_output.Time;
+
+											keystUniqRow_7.add(new_tUniqRow_7);
+											if (row9 == null) {
+
+												row9 = new row9Struct();
+											}
+											row9.Time = time_output.Time;
+											row9.Hours = time_output.Hours;
+											row9.Minutes = time_output.Minutes;
+											nb_uniques_tUniqRow_7++;
+										} else {
+											nb_duplicates_tUniqRow_7++;
 										}
-										sb_tFileOutputDelimited_6.append(OUT_DELIM_tFileOutputDelimited_6);
-										if (row9.Hours != null) {
-											sb_tFileOutputDelimited_6.append(row9.Hours);
-										}
-										sb_tFileOutputDelimited_6.append(OUT_DELIM_tFileOutputDelimited_6);
-										if (row9.Minutes != null) {
-											sb_tFileOutputDelimited_6.append(row9.Minutes);
-										}
-										sb_tFileOutputDelimited_6.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_6);
 
-										nb_line_tFileOutputDelimited_6++;
-										resourceMap.put("nb_line_tFileOutputDelimited_6",
-												nb_line_tFileOutputDelimited_6);
-
-										outtFileOutputDelimited_6.write(sb_tFileOutputDelimited_6.toString());
-
-										tos_count_tFileOutputDelimited_6++;
+										tos_count_tUniqRow_7++;
 
 										/**
-										 * [tFileOutputDelimited_6 main ] stop
+										 * [tUniqRow_7 main ] stop
 										 */
 
 										/**
-										 * [tFileOutputDelimited_6 process_data_begin ] start
+										 * [tUniqRow_7 process_data_begin ] start
 										 */
 
-										currentComponent = "tFileOutputDelimited_6";
+										currentComponent = "tUniqRow_7";
 
 										/**
-										 * [tFileOutputDelimited_6 process_data_begin ] stop
+										 * [tUniqRow_7 process_data_begin ] stop
 										 */
+// Start of branch "row9"
+										if (row9 != null) {
+
+											/**
+											 * [tFileOutputDelimited_6 main ] start
+											 */
+
+											currentComponent = "tFileOutputDelimited_6";
+
+											// row9
+											// row9
+
+											if (execStat) {
+												runStat.updateStatOnConnection("row9" + iterateId, 1, 1);
+											}
+
+											StringBuilder sb_tFileOutputDelimited_6 = new StringBuilder();
+											if (row9.Time != null) {
+												sb_tFileOutputDelimited_6.append(row9.Time);
+											}
+											sb_tFileOutputDelimited_6.append(OUT_DELIM_tFileOutputDelimited_6);
+											if (row9.Hours != null) {
+												sb_tFileOutputDelimited_6.append(row9.Hours);
+											}
+											sb_tFileOutputDelimited_6.append(OUT_DELIM_tFileOutputDelimited_6);
+											if (row9.Minutes != null) {
+												sb_tFileOutputDelimited_6.append(row9.Minutes);
+											}
+											sb_tFileOutputDelimited_6.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_6);
+
+											nb_line_tFileOutputDelimited_6++;
+											resourceMap.put("nb_line_tFileOutputDelimited_6",
+													nb_line_tFileOutputDelimited_6);
+
+											outtFileOutputDelimited_6.write(sb_tFileOutputDelimited_6.toString());
+
+											tos_count_tFileOutputDelimited_6++;
+
+											/**
+											 * [tFileOutputDelimited_6 main ] stop
+											 */
+
+											/**
+											 * [tFileOutputDelimited_6 process_data_begin ] start
+											 */
+
+											currentComponent = "tFileOutputDelimited_6";
+
+											/**
+											 * [tFileOutputDelimited_6 process_data_begin ] stop
+											 */
+
+											/**
+											 * [tFileOutputDelimited_6 process_data_end ] start
+											 */
+
+											currentComponent = "tFileOutputDelimited_6";
+
+											/**
+											 * [tFileOutputDelimited_6 process_data_end ] stop
+											 */
+
+										} // End of branch "row9"
 
 										/**
-										 * [tFileOutputDelimited_6 process_data_end ] start
+										 * [tUniqRow_7 process_data_end ] start
 										 */
 
-										currentComponent = "tFileOutputDelimited_6";
+										currentComponent = "tUniqRow_7";
 
 										/**
-										 * [tFileOutputDelimited_6 process_data_end ] stop
+										 * [tUniqRow_7 process_data_end ] stop
 										 */
 
-									} // End of branch "row9"
-
-									/**
-									 * [tUniqRow_7 process_data_end ] start
-									 */
-
-									currentComponent = "tUniqRow_7";
-
-									/**
-									 * [tUniqRow_7 process_data_end ] stop
-									 */
-
-								} // End of branch "time_output"
+									} // End of branch "time_output"
 
 // Start of branch "victim_output"
-								if (victim_output != null) {
-
-									/**
-									 * [tUniqRow_8 main ] start
-									 */
-
-									currentComponent = "tUniqRow_8";
-
-									// victim_output
-									// victim_output
-
-									if (execStat) {
-										runStat.updateStatOnConnection("victim_output" + iterateId, 1, 1);
-									}
-
-									row10 = null;
-									if (victim_output.Vict_id == null) {
-										finder_tUniqRow_8.Vict_id = null;
-									} else {
-										finder_tUniqRow_8.Vict_id = victim_output.Vict_id.toLowerCase();
-									}
-									finder_tUniqRow_8.hashCodeDirty = true;
-									if (!keystUniqRow_8.contains(finder_tUniqRow_8)) {
-										KeyStruct_tUniqRow_8 new_tUniqRow_8 = new KeyStruct_tUniqRow_8();
-
-										if (victim_output.Vict_id == null) {
-											new_tUniqRow_8.Vict_id = null;
-										} else {
-											new_tUniqRow_8.Vict_id = victim_output.Vict_id.toLowerCase();
-										}
-
-										keystUniqRow_8.add(new_tUniqRow_8);
-										if (row10 == null) {
-
-											row10 = new row10Struct();
-										}
-										row10.Vict_id = victim_output.Vict_id;
-										row10.Vict_Age = victim_output.Vict_Age;
-										row10.Vict_Sex = victim_output.Vict_Sex;
-										row10.Vict_Descent = victim_output.Vict_Descent;
-										nb_uniques_tUniqRow_8++;
-									} else {
-										nb_duplicates_tUniqRow_8++;
-									}
-
-									tos_count_tUniqRow_8++;
-
-									/**
-									 * [tUniqRow_8 main ] stop
-									 */
-
-									/**
-									 * [tUniqRow_8 process_data_begin ] start
-									 */
-
-									currentComponent = "tUniqRow_8";
-
-									/**
-									 * [tUniqRow_8 process_data_begin ] stop
-									 */
-// Start of branch "row10"
-									if (row10 != null) {
+									if (victim_output != null) {
 
 										/**
-										 * [tFileOutputDelimited_7 main ] start
+										 * [tUniqRow_8 main ] start
 										 */
 
-										currentComponent = "tFileOutputDelimited_7";
+										currentComponent = "tUniqRow_8";
 
-										// row10
-										// row10
+										// victim_output
+										// victim_output
 
 										if (execStat) {
-											runStat.updateStatOnConnection("row10" + iterateId, 1, 1);
+											runStat.updateStatOnConnection("victim_output" + iterateId, 1, 1);
 										}
 
-										StringBuilder sb_tFileOutputDelimited_7 = new StringBuilder();
-										if (row10.Vict_id != null) {
-											sb_tFileOutputDelimited_7.append(row10.Vict_id);
+										row10 = null;
+										if (victim_output.Vict_id == null) {
+											finder_tUniqRow_8.Vict_id = null;
+										} else {
+											finder_tUniqRow_8.Vict_id = victim_output.Vict_id.toLowerCase();
 										}
-										sb_tFileOutputDelimited_7.append(OUT_DELIM_tFileOutputDelimited_7);
-										if (row10.Vict_Age != null) {
-											sb_tFileOutputDelimited_7.append(row10.Vict_Age);
-										}
-										sb_tFileOutputDelimited_7.append(OUT_DELIM_tFileOutputDelimited_7);
-										if (row10.Vict_Sex != null) {
-											sb_tFileOutputDelimited_7.append(row10.Vict_Sex);
-										}
-										sb_tFileOutputDelimited_7.append(OUT_DELIM_tFileOutputDelimited_7);
-										if (row10.Vict_Descent != null) {
-											sb_tFileOutputDelimited_7.append(row10.Vict_Descent);
-										}
-										sb_tFileOutputDelimited_7.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_7);
+										finder_tUniqRow_8.hashCodeDirty = true;
+										if (!keystUniqRow_8.contains(finder_tUniqRow_8)) {
+											KeyStruct_tUniqRow_8 new_tUniqRow_8 = new KeyStruct_tUniqRow_8();
 
-										nb_line_tFileOutputDelimited_7++;
-										resourceMap.put("nb_line_tFileOutputDelimited_7",
-												nb_line_tFileOutputDelimited_7);
+											if (victim_output.Vict_id == null) {
+												new_tUniqRow_8.Vict_id = null;
+											} else {
+												new_tUniqRow_8.Vict_id = victim_output.Vict_id.toLowerCase();
+											}
 
-										outtFileOutputDelimited_7.write(sb_tFileOutputDelimited_7.toString());
+											keystUniqRow_8.add(new_tUniqRow_8);
+											if (row10 == null) {
 
-										tos_count_tFileOutputDelimited_7++;
+												row10 = new row10Struct();
+											}
+											row10.Vict_id = victim_output.Vict_id;
+											row10.Vict_Age = victim_output.Vict_Age;
+											row10.Vict_Sex = victim_output.Vict_Sex;
+											row10.Vict_Descent = victim_output.Vict_Descent;
+											nb_uniques_tUniqRow_8++;
+										} else {
+											nb_duplicates_tUniqRow_8++;
+										}
+
+										tos_count_tUniqRow_8++;
 
 										/**
-										 * [tFileOutputDelimited_7 main ] stop
+										 * [tUniqRow_8 main ] stop
 										 */
 
 										/**
-										 * [tFileOutputDelimited_7 process_data_begin ] start
+										 * [tUniqRow_8 process_data_begin ] start
 										 */
 
-										currentComponent = "tFileOutputDelimited_7";
+										currentComponent = "tUniqRow_8";
 
 										/**
-										 * [tFileOutputDelimited_7 process_data_begin ] stop
+										 * [tUniqRow_8 process_data_begin ] stop
 										 */
+// Start of branch "row10"
+										if (row10 != null) {
+
+											/**
+											 * [tFileOutputDelimited_7 main ] start
+											 */
+
+											currentComponent = "tFileOutputDelimited_7";
+
+											// row10
+											// row10
+
+											if (execStat) {
+												runStat.updateStatOnConnection("row10" + iterateId, 1, 1);
+											}
+
+											StringBuilder sb_tFileOutputDelimited_7 = new StringBuilder();
+											if (row10.Vict_id != null) {
+												sb_tFileOutputDelimited_7.append(row10.Vict_id);
+											}
+											sb_tFileOutputDelimited_7.append(OUT_DELIM_tFileOutputDelimited_7);
+											if (row10.Vict_Age != null) {
+												sb_tFileOutputDelimited_7.append(row10.Vict_Age);
+											}
+											sb_tFileOutputDelimited_7.append(OUT_DELIM_tFileOutputDelimited_7);
+											if (row10.Vict_Sex != null) {
+												sb_tFileOutputDelimited_7.append(row10.Vict_Sex);
+											}
+											sb_tFileOutputDelimited_7.append(OUT_DELIM_tFileOutputDelimited_7);
+											if (row10.Vict_Descent != null) {
+												sb_tFileOutputDelimited_7.append(row10.Vict_Descent);
+											}
+											sb_tFileOutputDelimited_7.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_7);
+
+											nb_line_tFileOutputDelimited_7++;
+											resourceMap.put("nb_line_tFileOutputDelimited_7",
+													nb_line_tFileOutputDelimited_7);
+
+											outtFileOutputDelimited_7.write(sb_tFileOutputDelimited_7.toString());
+
+											tos_count_tFileOutputDelimited_7++;
+
+											/**
+											 * [tFileOutputDelimited_7 main ] stop
+											 */
+
+											/**
+											 * [tFileOutputDelimited_7 process_data_begin ] start
+											 */
+
+											currentComponent = "tFileOutputDelimited_7";
+
+											/**
+											 * [tFileOutputDelimited_7 process_data_begin ] stop
+											 */
+
+											/**
+											 * [tFileOutputDelimited_7 process_data_end ] start
+											 */
+
+											currentComponent = "tFileOutputDelimited_7";
+
+											/**
+											 * [tFileOutputDelimited_7 process_data_end ] stop
+											 */
+
+										} // End of branch "row10"
 
 										/**
-										 * [tFileOutputDelimited_7 process_data_end ] start
+										 * [tUniqRow_8 process_data_end ] start
 										 */
 
-										currentComponent = "tFileOutputDelimited_7";
+										currentComponent = "tUniqRow_8";
 
 										/**
-										 * [tFileOutputDelimited_7 process_data_end ] stop
+										 * [tUniqRow_8 process_data_end ] stop
 										 */
 
-									} // End of branch "row10"
+									} // End of branch "victim_output"
 
 									/**
-									 * [tUniqRow_8 process_data_end ] start
+									 * [tMap_1 process_data_end ] start
 									 */
 
-									currentComponent = "tUniqRow_8";
+									currentComponent = "tMap_1";
 
 									/**
-									 * [tUniqRow_8 process_data_end ] stop
+									 * [tMap_1 process_data_end ] stop
 									 */
 
-								} // End of branch "victim_output"
+								} // End of branch "clean_mocode_list"
 
 								/**
-								 * [tMap_1 process_data_end ] start
+								 * [tMap_3 process_data_end ] start
 								 */
 
-								currentComponent = "tMap_1";
+								currentComponent = "tMap_3";
 
 								/**
-								 * [tMap_1 process_data_end ] stop
+								 * [tMap_3 process_data_end ] stop
 								 */
 
 							} // End of branch "row2"
@@ -7948,6 +8191,29 @@ public class Dimensions implements TalendJob {
 				 */
 
 				/**
+				 * [tMap_3 end ] start
+				 */
+
+				currentComponent = "tMap_3";
+
+// ###############################
+// # Lookup hashes releasing
+// ###############################      
+
+				if (execStat) {
+					if (resourceMap.get("inIterateVComp") == null || !((Boolean) resourceMap.get("inIterateVComp"))) {
+						runStat.updateStatOnConnection("row2" + iterateId, 2, 0);
+					}
+				}
+
+				ok_Hash.put("tMap_3", true);
+				end_Hash.put("tMap_3", System.currentTimeMillis());
+
+				/**
+				 * [tMap_3 end ] stop
+				 */
+
+				/**
 				 * [tMap_1 end ] start
 				 */
 
@@ -7960,16 +8226,11 @@ public class Dimensions implements TalendJob {
 				}
 				globalMap.remove("tHash_Lookup_row4");
 
-				if (tHash_Lookup_clean_mocodes != null) {
-					tHash_Lookup_clean_mocodes.endGet();
-				}
-				globalMap.remove("tHash_Lookup_clean_mocodes");
-
 // ###############################      
 
 				if (execStat) {
 					if (resourceMap.get("inIterateVComp") == null || !((Boolean) resourceMap.get("inIterateVComp"))) {
-						runStat.updateStatOnConnection("row2" + iterateId, 2, 0);
+						runStat.updateStatOnConnection("clean_mocode_list" + iterateId, 2, 0);
 					}
 				}
 
@@ -8109,57 +8370,6 @@ public class Dimensions implements TalendJob {
 
 				/**
 				 * [tFileOutputDelimited_3 end ] stop
-				 */
-
-				/**
-				 * [tUniqRow_5 end ] start
-				 */
-
-				currentComponent = "tUniqRow_5";
-
-				globalMap.put("tUniqRow_5_NB_UNIQUES", nb_uniques_tUniqRow_5);
-				globalMap.put("tUniqRow_5_NB_DUPLICATES", nb_duplicates_tUniqRow_5);
-
-				if (execStat) {
-					if (resourceMap.get("inIterateVComp") == null || !((Boolean) resourceMap.get("inIterateVComp"))) {
-						runStat.updateStatOnConnection("mode_operatoire_output" + iterateId, 2, 0);
-					}
-				}
-
-				ok_Hash.put("tUniqRow_5", true);
-				end_Hash.put("tUniqRow_5", System.currentTimeMillis());
-
-				/**
-				 * [tUniqRow_5 end ] stop
-				 */
-
-				/**
-				 * [tFileOutputDelimited_4 end ] start
-				 */
-
-				currentComponent = "tFileOutputDelimited_4";
-
-				if (outtFileOutputDelimited_4 != null) {
-					outtFileOutputDelimited_4.flush();
-					outtFileOutputDelimited_4.close();
-				}
-
-				globalMap.put("tFileOutputDelimited_4_NB_LINE", nb_line_tFileOutputDelimited_4);
-				globalMap.put("tFileOutputDelimited_4_FILE_NAME", fileName_tFileOutputDelimited_4);
-
-				resourceMap.put("finish_tFileOutputDelimited_4", true);
-
-				if (execStat) {
-					if (resourceMap.get("inIterateVComp") == null || !((Boolean) resourceMap.get("inIterateVComp"))) {
-						runStat.updateStatOnConnection("row7" + iterateId, 2, 0);
-					}
-				}
-
-				ok_Hash.put("tFileOutputDelimited_4", true);
-				end_Hash.put("tFileOutputDelimited_4", System.currentTimeMillis());
-
-				/**
-				 * [tFileOutputDelimited_4 end ] stop
 				 */
 
 				/**
@@ -8332,9 +8542,6 @@ public class Dimensions implements TalendJob {
 			// free memory for "tMap_1"
 			globalMap.remove("tHash_Lookup_row4");
 
-			// free memory for "tMap_1"
-			globalMap.remove("tHash_Lookup_clean_mocodes");
-
 			try {
 
 				/**
@@ -8355,6 +8562,16 @@ public class Dimensions implements TalendJob {
 
 				/**
 				 * [tUniqRow_2 finally ] stop
+				 */
+
+				/**
+				 * [tMap_3 finally ] start
+				 */
+
+				currentComponent = "tMap_3";
+
+				/**
+				 * [tMap_3 finally ] stop
 				 */
 
 				/**
@@ -8448,37 +8665,6 @@ public class Dimensions implements TalendJob {
 
 				/**
 				 * [tFileOutputDelimited_3 finally ] stop
-				 */
-
-				/**
-				 * [tUniqRow_5 finally ] start
-				 */
-
-				currentComponent = "tUniqRow_5";
-
-				/**
-				 * [tUniqRow_5 finally ] stop
-				 */
-
-				/**
-				 * [tFileOutputDelimited_4 finally ] start
-				 */
-
-				currentComponent = "tFileOutputDelimited_4";
-
-				if (resourceMap.get("finish_tFileOutputDelimited_4") == null) {
-
-					java.io.Writer outtFileOutputDelimited_4 = (java.io.Writer) resourceMap
-							.get("out_tFileOutputDelimited_4");
-					if (outtFileOutputDelimited_4 != null) {
-						outtFileOutputDelimited_4.flush();
-						outtFileOutputDelimited_4.close();
-					}
-
-				}
-
-				/**
-				 * [tFileOutputDelimited_4 finally ] stop
 				 */
 
 				/**
@@ -9057,8 +9243,8 @@ public class Dimensions implements TalendJob {
 				// connection name:row4
 				// source node:tUniqRow_1 - inputs:(row3) outputs:(row4,row4) | target
 				// node:tAdvancedHash_row4 - inputs:(row4) outputs:()
-				// linked node: tMap_1 - inputs:(row2,row4,clean_mocodes)
-				// outputs:(crimes_output,weapon_output,crime_output,mode_operatoire_output,day_output,time_output,victim_output)
+				// linked node: tMap_1 - inputs:(clean_mocode_list,row4)
+				// outputs:(crimes_output,weapon_output,crime_output,day_output,time_output,victim_output)
 
 				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row4 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
 
@@ -9429,8 +9615,195 @@ public class Dimensions implements TalendJob {
 		globalMap.put("tFileInputDelimited_2_SUBPROCESS_STATE", 1);
 	}
 
-	public static class clean_mocodesStruct
-			implements routines.system.IPersistableComparableLookupRow<clean_mocodesStruct> {
+	public static class row7Struct implements routines.system.IPersistableRow<row7Struct> {
+		final static byte[] commonByteArrayLock_BI5A_Dimensions = new byte[0];
+		static byte[] commonByteArray_BI5A_Dimensions = new byte[0];
+		protected static final int DEFAULT_HASHCODE = 1;
+		protected static final int PRIME = 31;
+		protected int hashCode = DEFAULT_HASHCODE;
+		public boolean hashCodeDirty = true;
+
+		public String loopKey;
+
+		public String Mocodes;
+
+		public String getMocodes() {
+			return this.Mocodes;
+		}
+
+		public String Mocodes_Explaination;
+
+		public String getMocodes_Explaination() {
+			return this.Mocodes_Explaination;
+		}
+
+		@Override
+		public int hashCode() {
+			if (this.hashCodeDirty) {
+				final int prime = PRIME;
+				int result = DEFAULT_HASHCODE;
+
+				result = prime * result + ((this.Mocodes == null) ? 0 : this.Mocodes.hashCode());
+
+				this.hashCode = result;
+				this.hashCodeDirty = false;
+			}
+			return this.hashCode;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			final row7Struct other = (row7Struct) obj;
+
+			if (this.Mocodes == null) {
+				if (other.Mocodes != null)
+					return false;
+
+			} else if (!this.Mocodes.equals(other.Mocodes))
+
+				return false;
+
+			return true;
+		}
+
+		public void copyDataTo(row7Struct other) {
+
+			other.Mocodes = this.Mocodes;
+			other.Mocodes_Explaination = this.Mocodes_Explaination;
+
+		}
+
+		public void copyKeysDataTo(row7Struct other) {
+
+			other.Mocodes = this.Mocodes;
+
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_BI5A_Dimensions.length) {
+					if (length < 1024 && commonByteArray_BI5A_Dimensions.length == 0) {
+						commonByteArray_BI5A_Dimensions = new byte[1024];
+					} else {
+						commonByteArray_BI5A_Dimensions = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_BI5A_Dimensions, 0, length);
+				strReturn = new String(commonByteArray_BI5A_Dimensions, 0, length, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_BI5A_Dimensions) {
+
+				try {
+
+					int length = 0;
+
+					this.Mocodes = readString(dis);
+
+					this.Mocodes_Explaination = readString(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// String
+
+				writeString(this.Mocodes, dos);
+
+				// String
+
+				writeString(this.Mocodes_Explaination, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("Mocodes=" + Mocodes);
+			sb.append(",Mocodes_Explaination=" + Mocodes_Explaination);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row7Struct other) {
+
+			int returnValue = -1;
+
+			returnValue = checkNullsAndCompare(this.Mocodes, other.Mocodes);
+			if (returnValue != 0) {
+				return returnValue;
+			}
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public static class clean_mocodesStruct implements routines.system.IPersistableRow<clean_mocodesStruct> {
 		final static byte[] commonByteArrayLock_BI5A_Dimensions = new byte[0];
 		static byte[] commonByteArray_BI5A_Dimensions = new byte[0];
 		protected static final int DEFAULT_HASHCODE = 1;
@@ -9530,31 +9903,7 @@ public class Dimensions implements TalendJob {
 			}
 		}
 
-		private String readString(DataInputStream dis, ObjectInputStream ois) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				byte[] byteArray = new byte[length];
-				dis.read(byteArray);
-				strReturn = new String(byteArray, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, DataOutputStream dos, ObjectOutputStream oos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		public void readKeysData(ObjectInputStream dis) {
+		public void readData(ObjectInputStream dis) {
 
 			synchronized (commonByteArrayLock_BI5A_Dimensions) {
 
@@ -9563,6 +9912,8 @@ public class Dimensions implements TalendJob {
 					int length = 0;
 
 					this.Mocodes = readString(dis);
+
+					this.Mocodes_Explaination = readString(dis);
 
 				} catch (IOException e) {
 					throw new RuntimeException(e);
@@ -9573,43 +9924,16 @@ public class Dimensions implements TalendJob {
 
 		}
 
-		public void writeKeysData(ObjectOutputStream dos) {
+		public void writeData(ObjectOutputStream dos) {
 			try {
 
 				// String
 
 				writeString(this.Mocodes, dos);
 
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
+				// String
 
-		}
-
-		/**
-		 * Fill Values data by reading ObjectInputStream.
-		 */
-		public void readValuesData(DataInputStream dis, ObjectInputStream ois) {
-			try {
-
-				int length = 0;
-
-				this.Mocodes_Explaination = readString(dis, ois);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-
-			}
-
-		}
-
-		/**
-		 * Return a byte array which represents Values data.
-		 */
-		public void writeValuesData(DataOutputStream dos, ObjectOutputStream oos) {
-			try {
-
-				writeString(this.Mocodes_Explaination, dos, oos);
+				writeString(this.Mocodes_Explaination, dos);
 
 			} catch (IOException e) {
 				throw new RuntimeException(e);
@@ -9805,15 +10129,112 @@ public class Dimensions implements TalendJob {
 
 				row11Struct row11 = new row11Struct();
 				clean_mocodesStruct clean_mocodes = new clean_mocodesStruct();
+				row7Struct row7 = new row7Struct();
 
 				/**
-				 * [tAdvancedHash_clean_mocodes begin ] start
+				 * [tFileOutputDelimited_4 begin ] start
 				 */
 
-				ok_Hash.put("tAdvancedHash_clean_mocodes", false);
-				start_Hash.put("tAdvancedHash_clean_mocodes", System.currentTimeMillis());
+				ok_Hash.put("tFileOutputDelimited_4", false);
+				start_Hash.put("tFileOutputDelimited_4", System.currentTimeMillis());
 
-				currentComponent = "tAdvancedHash_clean_mocodes";
+				currentComponent = "tFileOutputDelimited_4";
+
+				if (execStat) {
+					if (resourceMap.get("inIterateVComp") == null) {
+
+						if (execStat) {
+							runStat.updateStatOnConnection("row7" + iterateId, 0, 0);
+						}
+
+					}
+				}
+
+				int tos_count_tFileOutputDelimited_4 = 0;
+
+				String fileName_tFileOutputDelimited_4 = "";
+				fileName_tFileOutputDelimited_4 = (new java.io.File(
+						"C:/Users/roro1/Documents/5A_INFO/Projet BI/Mode Operatoire output.csv")).getAbsolutePath()
+								.replace("\\", "/");
+				String fullName_tFileOutputDelimited_4 = null;
+				String extension_tFileOutputDelimited_4 = null;
+				String directory_tFileOutputDelimited_4 = null;
+				if ((fileName_tFileOutputDelimited_4.indexOf("/") != -1)) {
+					if (fileName_tFileOutputDelimited_4.lastIndexOf(".") < fileName_tFileOutputDelimited_4
+							.lastIndexOf("/")) {
+						fullName_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4;
+						extension_tFileOutputDelimited_4 = "";
+					} else {
+						fullName_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4.substring(0,
+								fileName_tFileOutputDelimited_4.lastIndexOf("."));
+						extension_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4
+								.substring(fileName_tFileOutputDelimited_4.lastIndexOf("."));
+					}
+					directory_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4.substring(0,
+							fileName_tFileOutputDelimited_4.lastIndexOf("/"));
+				} else {
+					if (fileName_tFileOutputDelimited_4.lastIndexOf(".") != -1) {
+						fullName_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4.substring(0,
+								fileName_tFileOutputDelimited_4.lastIndexOf("."));
+						extension_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4
+								.substring(fileName_tFileOutputDelimited_4.lastIndexOf("."));
+					} else {
+						fullName_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4;
+						extension_tFileOutputDelimited_4 = "";
+					}
+					directory_tFileOutputDelimited_4 = "";
+				}
+				boolean isFileGenerated_tFileOutputDelimited_4 = true;
+				java.io.File filetFileOutputDelimited_4 = new java.io.File(fileName_tFileOutputDelimited_4);
+				globalMap.put("tFileOutputDelimited_4_FILE_NAME", fileName_tFileOutputDelimited_4);
+				int nb_line_tFileOutputDelimited_4 = 0;
+				int splitedFileNo_tFileOutputDelimited_4 = 0;
+				int currentRow_tFileOutputDelimited_4 = 0;
+
+				final String OUT_DELIM_tFileOutputDelimited_4 = /** Start field tFileOutputDelimited_4:FIELDSEPARATOR */
+						";"/** End field tFileOutputDelimited_4:FIELDSEPARATOR */
+				;
+
+				final String OUT_DELIM_ROWSEP_tFileOutputDelimited_4 = /**
+																		 * Start field
+																		 * tFileOutputDelimited_4:ROWSEPARATOR
+																		 */
+						"\n"/** End field tFileOutputDelimited_4:ROWSEPARATOR */
+				;
+
+				// create directory only if not exists
+				if (directory_tFileOutputDelimited_4 != null && directory_tFileOutputDelimited_4.trim().length() != 0) {
+					java.io.File dir_tFileOutputDelimited_4 = new java.io.File(directory_tFileOutputDelimited_4);
+					if (!dir_tFileOutputDelimited_4.exists()) {
+						dir_tFileOutputDelimited_4.mkdirs();
+					}
+				}
+
+				// routines.system.Row
+				java.io.Writer outtFileOutputDelimited_4 = null;
+
+				java.io.File fileToDelete_tFileOutputDelimited_4 = new java.io.File(fileName_tFileOutputDelimited_4);
+				if (fileToDelete_tFileOutputDelimited_4.exists()) {
+					fileToDelete_tFileOutputDelimited_4.delete();
+				}
+				outtFileOutputDelimited_4 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
+						new java.io.FileOutputStream(fileName_tFileOutputDelimited_4, false), "ISO-8859-15"));
+
+				resourceMap.put("out_tFileOutputDelimited_4", outtFileOutputDelimited_4);
+				resourceMap.put("nb_line_tFileOutputDelimited_4", nb_line_tFileOutputDelimited_4);
+
+				/**
+				 * [tFileOutputDelimited_4 begin ] stop
+				 */
+
+				/**
+				 * [tUniqRow_5 begin ] start
+				 */
+
+				ok_Hash.put("tUniqRow_5", false);
+				start_Hash.put("tUniqRow_5", System.currentTimeMillis());
+
+				currentComponent = "tUniqRow_5";
 
 				if (execStat) {
 					if (resourceMap.get("inIterateVComp") == null) {
@@ -9825,23 +10246,61 @@ public class Dimensions implements TalendJob {
 					}
 				}
 
-				int tos_count_tAdvancedHash_clean_mocodes = 0;
+				int tos_count_tUniqRow_5 = 0;
 
-				// connection name:clean_mocodes
-				// source node:tMap_2 - inputs:(row11) outputs:(clean_mocodes,clean_mocodes) |
-				// target node:tAdvancedHash_clean_mocodes - inputs:(clean_mocodes) outputs:()
-				// linked node: tMap_1 - inputs:(row2,row4,clean_mocodes)
-				// outputs:(crimes_output,weapon_output,crime_output,mode_operatoire_output,day_output,time_output,victim_output)
+				class KeyStruct_tUniqRow_5 {
 
-				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_clean_mocodes = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
+					private static final int DEFAULT_HASHCODE = 1;
+					private static final int PRIME = 31;
+					private int hashCode = DEFAULT_HASHCODE;
+					public boolean hashCodeDirty = true;
 
-				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<clean_mocodesStruct> tHash_Lookup_clean_mocodes = org.talend.designer.components.lookup.memory.AdvancedMemoryLookup
-						.<clean_mocodesStruct>getLookup(matchingModeEnum_clean_mocodes);
+					String Mocodes;
 
-				globalMap.put("tHash_Lookup_clean_mocodes", tHash_Lookup_clean_mocodes);
+					@Override
+					public int hashCode() {
+						if (this.hashCodeDirty) {
+							final int prime = PRIME;
+							int result = DEFAULT_HASHCODE;
+
+							result = prime * result + ((this.Mocodes == null) ? 0 : this.Mocodes.hashCode());
+
+							this.hashCode = result;
+							this.hashCodeDirty = false;
+						}
+						return this.hashCode;
+					}
+
+					@Override
+					public boolean equals(Object obj) {
+						if (this == obj)
+							return true;
+						if (obj == null)
+							return false;
+						if (getClass() != obj.getClass())
+							return false;
+						final KeyStruct_tUniqRow_5 other = (KeyStruct_tUniqRow_5) obj;
+
+						if (this.Mocodes == null) {
+							if (other.Mocodes != null)
+								return false;
+
+						} else if (!this.Mocodes.equals(other.Mocodes))
+
+							return false;
+
+						return true;
+					}
+
+				}
+
+				int nb_uniques_tUniqRow_5 = 0;
+				int nb_duplicates_tUniqRow_5 = 0;
+				KeyStruct_tUniqRow_5 finder_tUniqRow_5 = new KeyStruct_tUniqRow_5();
+				java.util.Set<KeyStruct_tUniqRow_5> keystUniqRow_5 = new java.util.HashSet<KeyStruct_tUniqRow_5>();
 
 				/**
-				 * [tAdvancedHash_clean_mocodes begin ] stop
+				 * [tUniqRow_5 begin ] stop
 				 */
 
 				/**
@@ -10040,10 +10499,10 @@ public class Dimensions implements TalendJob {
 							if (clean_mocodes != null) {
 
 								/**
-								 * [tAdvancedHash_clean_mocodes main ] start
+								 * [tUniqRow_5 main ] start
 								 */
 
-								currentComponent = "tAdvancedHash_clean_mocodes";
+								currentComponent = "tUniqRow_5";
 
 								// clean_mocodes
 								// clean_mocodes
@@ -10052,38 +10511,116 @@ public class Dimensions implements TalendJob {
 									runStat.updateStatOnConnection("clean_mocodes" + iterateId, 1, 1);
 								}
 
-								clean_mocodesStruct clean_mocodes_HashRow = new clean_mocodesStruct();
+								row7 = null;
+								if (clean_mocodes.Mocodes == null) {
+									finder_tUniqRow_5.Mocodes = null;
+								} else {
+									finder_tUniqRow_5.Mocodes = clean_mocodes.Mocodes.toLowerCase();
+								}
+								finder_tUniqRow_5.hashCodeDirty = true;
+								if (!keystUniqRow_5.contains(finder_tUniqRow_5)) {
+									KeyStruct_tUniqRow_5 new_tUniqRow_5 = new KeyStruct_tUniqRow_5();
 
-								clean_mocodes_HashRow.Mocodes = clean_mocodes.Mocodes;
+									if (clean_mocodes.Mocodes == null) {
+										new_tUniqRow_5.Mocodes = null;
+									} else {
+										new_tUniqRow_5.Mocodes = clean_mocodes.Mocodes.toLowerCase();
+									}
 
-								clean_mocodes_HashRow.Mocodes_Explaination = clean_mocodes.Mocodes_Explaination;
+									keystUniqRow_5.add(new_tUniqRow_5);
+									if (row7 == null) {
 
-								tHash_Lookup_clean_mocodes.put(clean_mocodes_HashRow);
+										row7 = new row7Struct();
+									}
+									row7.Mocodes = clean_mocodes.Mocodes;
+									row7.Mocodes_Explaination = clean_mocodes.Mocodes_Explaination;
+									nb_uniques_tUniqRow_5++;
+								} else {
+									nb_duplicates_tUniqRow_5++;
+								}
 
-								tos_count_tAdvancedHash_clean_mocodes++;
+								tos_count_tUniqRow_5++;
 
 								/**
-								 * [tAdvancedHash_clean_mocodes main ] stop
+								 * [tUniqRow_5 main ] stop
 								 */
 
 								/**
-								 * [tAdvancedHash_clean_mocodes process_data_begin ] start
+								 * [tUniqRow_5 process_data_begin ] start
 								 */
 
-								currentComponent = "tAdvancedHash_clean_mocodes";
+								currentComponent = "tUniqRow_5";
 
 								/**
-								 * [tAdvancedHash_clean_mocodes process_data_begin ] stop
+								 * [tUniqRow_5 process_data_begin ] stop
+								 */
+// Start of branch "row7"
+								if (row7 != null) {
+
+									/**
+									 * [tFileOutputDelimited_4 main ] start
+									 */
+
+									currentComponent = "tFileOutputDelimited_4";
+
+									// row7
+									// row7
+
+									if (execStat) {
+										runStat.updateStatOnConnection("row7" + iterateId, 1, 1);
+									}
+
+									StringBuilder sb_tFileOutputDelimited_4 = new StringBuilder();
+									if (row7.Mocodes != null) {
+										sb_tFileOutputDelimited_4.append(row7.Mocodes);
+									}
+									sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
+									if (row7.Mocodes_Explaination != null) {
+										sb_tFileOutputDelimited_4.append(row7.Mocodes_Explaination);
+									}
+									sb_tFileOutputDelimited_4.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_4);
+
+									nb_line_tFileOutputDelimited_4++;
+									resourceMap.put("nb_line_tFileOutputDelimited_4", nb_line_tFileOutputDelimited_4);
+
+									outtFileOutputDelimited_4.write(sb_tFileOutputDelimited_4.toString());
+
+									tos_count_tFileOutputDelimited_4++;
+
+									/**
+									 * [tFileOutputDelimited_4 main ] stop
+									 */
+
+									/**
+									 * [tFileOutputDelimited_4 process_data_begin ] start
+									 */
+
+									currentComponent = "tFileOutputDelimited_4";
+
+									/**
+									 * [tFileOutputDelimited_4 process_data_begin ] stop
+									 */
+
+									/**
+									 * [tFileOutputDelimited_4 process_data_end ] start
+									 */
+
+									currentComponent = "tFileOutputDelimited_4";
+
+									/**
+									 * [tFileOutputDelimited_4 process_data_end ] stop
+									 */
+
+								} // End of branch "row7"
+
+								/**
+								 * [tUniqRow_5 process_data_end ] start
 								 */
 
-								/**
-								 * [tAdvancedHash_clean_mocodes process_data_end ] start
-								 */
-
-								currentComponent = "tAdvancedHash_clean_mocodes";
+								currentComponent = "tUniqRow_5";
 
 								/**
-								 * [tAdvancedHash_clean_mocodes process_data_end ] stop
+								 * [tUniqRow_5 process_data_end ] stop
 								 */
 
 							} // End of branch "clean_mocodes"
@@ -10160,12 +10697,13 @@ public class Dimensions implements TalendJob {
 				 */
 
 				/**
-				 * [tAdvancedHash_clean_mocodes end ] start
+				 * [tUniqRow_5 end ] start
 				 */
 
-				currentComponent = "tAdvancedHash_clean_mocodes";
+				currentComponent = "tUniqRow_5";
 
-				tHash_Lookup_clean_mocodes.endPut();
+				globalMap.put("tUniqRow_5_NB_UNIQUES", nb_uniques_tUniqRow_5);
+				globalMap.put("tUniqRow_5_NB_DUPLICATES", nb_duplicates_tUniqRow_5);
 
 				if (execStat) {
 					if (resourceMap.get("inIterateVComp") == null || !((Boolean) resourceMap.get("inIterateVComp"))) {
@@ -10173,11 +10711,40 @@ public class Dimensions implements TalendJob {
 					}
 				}
 
-				ok_Hash.put("tAdvancedHash_clean_mocodes", true);
-				end_Hash.put("tAdvancedHash_clean_mocodes", System.currentTimeMillis());
+				ok_Hash.put("tUniqRow_5", true);
+				end_Hash.put("tUniqRow_5", System.currentTimeMillis());
 
 				/**
-				 * [tAdvancedHash_clean_mocodes end ] stop
+				 * [tUniqRow_5 end ] stop
+				 */
+
+				/**
+				 * [tFileOutputDelimited_4 end ] start
+				 */
+
+				currentComponent = "tFileOutputDelimited_4";
+
+				if (outtFileOutputDelimited_4 != null) {
+					outtFileOutputDelimited_4.flush();
+					outtFileOutputDelimited_4.close();
+				}
+
+				globalMap.put("tFileOutputDelimited_4_NB_LINE", nb_line_tFileOutputDelimited_4);
+				globalMap.put("tFileOutputDelimited_4_FILE_NAME", fileName_tFileOutputDelimited_4);
+
+				resourceMap.put("finish_tFileOutputDelimited_4", true);
+
+				if (execStat) {
+					if (resourceMap.get("inIterateVComp") == null || !((Boolean) resourceMap.get("inIterateVComp"))) {
+						runStat.updateStatOnConnection("row7" + iterateId, 2, 0);
+					}
+				}
+
+				ok_Hash.put("tFileOutputDelimited_4", true);
+				end_Hash.put("tFileOutputDelimited_4", System.currentTimeMillis());
+
+				/**
+				 * [tFileOutputDelimited_4 end ] stop
 				 */
 
 			} // end the resume
@@ -10217,13 +10784,34 @@ public class Dimensions implements TalendJob {
 				 */
 
 				/**
-				 * [tAdvancedHash_clean_mocodes finally ] start
+				 * [tUniqRow_5 finally ] start
 				 */
 
-				currentComponent = "tAdvancedHash_clean_mocodes";
+				currentComponent = "tUniqRow_5";
 
 				/**
-				 * [tAdvancedHash_clean_mocodes finally ] stop
+				 * [tUniqRow_5 finally ] stop
+				 */
+
+				/**
+				 * [tFileOutputDelimited_4 finally ] start
+				 */
+
+				currentComponent = "tFileOutputDelimited_4";
+
+				if (resourceMap.get("finish_tFileOutputDelimited_4") == null) {
+
+					java.io.Writer outtFileOutputDelimited_4 = (java.io.Writer) resourceMap
+							.get("out_tFileOutputDelimited_4");
+					if (outtFileOutputDelimited_4 != null) {
+						outtFileOutputDelimited_4.flush();
+						outtFileOutputDelimited_4.close();
+					}
+
+				}
+
+				/**
+				 * [tFileOutputDelimited_4 finally ] stop
 				 */
 
 			} catch (java.lang.Exception e) {
@@ -10440,6 +11028,18 @@ public class Dimensions implements TalendJob {
 			e_tFileInputDelimited_1.printStackTrace();
 
 		}
+		try {
+			errorCode = null;
+			tFileInputDelimited_3Process(globalMap);
+			if (!"failure".equals(status)) {
+				status = "end";
+			}
+		} catch (TalendException e_tFileInputDelimited_3) {
+			globalMap.put("tFileInputDelimited_3_SUBPROCESS_STATE", -1);
+
+			e_tFileInputDelimited_3.printStackTrace();
+
+		}
 
 		this.globalResumeTicket = true;// to run tPostJob
 
@@ -10593,6 +11193,6 @@ public class Dimensions implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 305107 characters generated by Talend Open Studio for Data Integration on the
- * 28 octobre 2021 19:41:02 CEST
+ * 323399 characters generated by Talend Open Studio for Data Integration on the
+ * 29 octobre 2021 17:20:02 CEST
  ************************************************************************************************/
