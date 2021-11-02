@@ -1,0 +1,31 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<expression:EMFExpression xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:expression="http:///expression.ecore" id="tMap_3=>" expression="StringHandling.LEN(row2.Mocodes)>53?StringHandling.RIGHT(StringHandling.LEFT(row2.Mocodes,54),4):null">
+  <variables name="row2.DR_NO" value="null" talendType="id_String"/>
+  <variables name="row2.Date_Rptd" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row2.DATE_OCC" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row2.TIME_OCC" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row2.AREA" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row2.AREA_NAME" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row2.Rpt_Dist_No" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row2.Part_1_2" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row2.Crm_Cd" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row2.Crm_Cd_Desc" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row2.Mocodes" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row2.Vict_Age" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row2.Vict_Sex" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row2.Vict_Descent" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row2.Premis_Cd" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row2.Premis_Desc" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row2.Weapon_Used_Cd" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row2.Weapon_Desc" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row2.Status" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row2.Status_Desc" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row2.Crm_Cd_1" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row2.Crm_Cd_2" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row2.Crm_Cd_3" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row2.Crm_Cd_4" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row2.LOCATION" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row2.Cross_Street" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row2.LAT" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row2.LON" value="null" talendType="id_String" nullable="true"/>
+</expression:EMFExpression>

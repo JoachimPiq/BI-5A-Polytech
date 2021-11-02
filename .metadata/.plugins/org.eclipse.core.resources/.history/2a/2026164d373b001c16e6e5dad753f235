@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Property xmi:id="_xgO95jZqEeyqleuC0T2YfA" id="_xgO90DZqEeyqleuC0T2YfA" label="Economic_Data" description="Ensemble de données sur les salaires ... par district" version="0.1" statusCode="" item="_xgO96DZqEeyqleuC0T2YfA" displayName="Economic_Data">
+    <author href="../../talend.project#_A659ATJCEeyJrJL7EMt-kw"/>
+    <additionalProperties xmi:id="_xgO96TZqEeyqleuC0T2YfA" key="created_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_xgO96jZqEeyqleuC0T2YfA" key="created_product_version" value="7.2.1.20190620_1446"/>
+    <additionalProperties xmi:id="_xgO96zZqEeyqleuC0T2YfA" key="created_date" value="2021-10-26T16:41:15.821+0200"/>
+    <additionalProperties xmi:id="_xgO97DZqEeyqleuC0T2YfA" key="modified_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_xgO97TZqEeyqleuC0T2YfA" key="modified_product_version" value="7.2.1.20190620_1446"/>
+    <additionalProperties xmi:id="_xgO97jZqEeyqleuC0T2YfA" key="modified_date" value="2021-10-26T16:41:15.821+0200"/>
+  </TalendProperties:Property>
+  <TalendProperties:ItemState xmi:id="_xgO95zZqEeyqleuC0T2YfA" path=""/>
+  <TalendProperties:DelimitedFileConnectionItem xmi:id="_xgO96DZqEeyqleuC0T2YfA" property="_xgO95jZqEeyqleuC0T2YfA" state="_xgO95zZqEeyqleuC0T2YfA">
+    <connection href="Economic_Data_0.1.item#_xgO90TZqEeyqleuC0T2YfA"/>
+  </TalendProperties:DelimitedFileConnectionItem>
+</xmi:XMI>

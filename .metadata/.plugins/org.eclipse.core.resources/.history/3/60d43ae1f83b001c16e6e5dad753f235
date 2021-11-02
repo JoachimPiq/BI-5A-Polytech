@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:DelimitedFileConnection xmi:id="_qhW5cDtHEeyIRNIzC7muVw" name="Pop_Race_Gender_District" dataPackage="_qhW5cTtHEeyIRNIzC7muVw" Server="Localhost 127.0.0.1" FilePath="D:/Documents_Joachim/SyncFolder/Cours_5A/BI/Intégration/data/Population_by_Race_by_Gender_for_Council_Districts.csv" Encoding="US-ASCII" FieldSeparatorValue="&quot;,&quot;" RowSeparatorValue="&quot;\n&quot;" UseHeader="true" HeaderValue="1" FirstLineCaption="true" FieldSeparatorType="Comma"/>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_qhW5cTtHEeyIRNIzC7muVw" name="default" dataManager="_qhW5cDtHEeyIRNIzC7muVw">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_qhW5cjtHEeyIRNIzC7muVw" id="_fG1MUDtGEeyIRNIzC7muVw" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_qhW5cztHEeyIRNIzC7muVw" label="category" length="12" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_qhW5dDtHEeyIRNIzC7muVw" label="indicator" length="28" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_qhW5dTtHEeyIRNIzC7muVw" label="sub_indicator" length="25" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_qhW5djtHEeyIRNIzC7muVw" label="locality" length="16" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_qhW5dztHEeyIRNIzC7muVw" label="gender" length="6" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_qhW5eDtHEeyIRNIzC7muVw" label="council_district" length="2" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_qhW5eTtHEeyIRNIzC7muVw" label="fiscal_year" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_qhW5ejtHEeyIRNIzC7muVw" label="fy_qtr" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_qhW5eztHEeyIRNIzC7muVw" label="calendar_year" length="4" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_qhW5fDtHEeyIRNIzC7muVw" label="cy_qtr" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_qhW5fTtHEeyIRNIzC7muVw" label="quarter_start" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_qhW5fjtHEeyIRNIzC7muVw" label="as_of_date" length="10" talendType="id_Date" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_qhW5fztHEeyIRNIzC7muVw" label="unit_of_measure" length="1" talendType="id_Character" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_qhW5gDtHEeyIRNIzC7muVw" label="unit_text" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_qhW5gTtHEeyIRNIzC7muVw" label="value" length="9" precision="4" talendType="id_Float" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_qhW5gjtHEeyIRNIzC7muVw" label="source_" length="36" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>

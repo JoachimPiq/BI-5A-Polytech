@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Property xmi:id="_XtKTRjZoEeyqleuC0T2YfA" id="_XtKTQDZoEeyqleuC0T2YfA" label="Crimes_Districts" description="Fait le lien entre un numéro unique de crime (DR_NO) et le district dans lequel il a été commis" version="0.1" statusCode="" item="_XtKTSDZoEeyqleuC0T2YfA" displayName="Crimes_Districts">
+    <author href="../../talend.project#_A659ATJCEeyJrJL7EMt-kw"/>
+    <additionalProperties xmi:id="_XtKTSTZoEeyqleuC0T2YfA" key="created_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_XtKTSjZoEeyqleuC0T2YfA" key="created_product_version" value="7.2.1.20190620_1446"/>
+    <additionalProperties xmi:id="_XtKTSzZoEeyqleuC0T2YfA" key="created_date" value="2021-10-26T16:24:03.700+0200"/>
+    <additionalProperties xmi:id="_XtKTTDZoEeyqleuC0T2YfA" key="modified_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_XtKTTTZoEeyqleuC0T2YfA" key="modified_product_version" value="7.2.1.20190620_1446"/>
+    <additionalProperties xmi:id="_XtKTTjZoEeyqleuC0T2YfA" key="modified_date" value="2021-11-01T18:35:03.844+0100"/>
+    <additionalProperties xmi:id="_VwRqcDs3EeyIRNIzC7muVw" key="import_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_VwRqcTs3EeyIRNIzC7muVw" key="import_product_version" value="7.2.1.20190620_1446"/>
+    <additionalProperties xmi:id="_VwRqcjs3EeyIRNIzC7muVw" key="import_date" value="2021-11-01T18:15:37.576+0100"/>
+  </TalendProperties:Property>
+  <TalendProperties:ItemState xmi:id="_XtKTRzZoEeyqleuC0T2YfA" path="" locked="true" lockDate="2021-11-01T18:34:29.956+0100">
+    <locker href="../../talend.project#_A659ATJCEeyJrJL7EMt-kw"/>
+  </TalendProperties:ItemState>
+  <TalendProperties:DelimitedFileConnectionItem xmi:id="_XtKTSDZoEeyqleuC0T2YfA" property="_XtKTRjZoEeyqleuC0T2YfA" state="_XtKTRzZoEeyqleuC0T2YfA">
+    <connection href="Crimes_Districts_0.1.item#_XtKTQTZoEeyqleuC0T2YfA"/>
+  </TalendProperties:DelimitedFileConnectionItem>
+</xmi:XMI>

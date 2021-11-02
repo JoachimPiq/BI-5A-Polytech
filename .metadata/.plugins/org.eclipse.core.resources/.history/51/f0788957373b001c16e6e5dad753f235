@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Property xmi:id="_ERQNwDJCEeyJrJL7EMt-kw" id="_ERL8UDJCEeyJrJL7EMt-kw" label="HiveFilterColumns" version="0.1" item="_ERQNwjJCEeyJrJL7EMt-kw">
+    <author href="../../../talend.project#_A659ATJCEeyJrJL7EMt-kw"/>
+    <additionalProperties xmi:id="_ERQ00DJCEeyJrJL7EMt-kw" key="created_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_ERQ00TJCEeyJrJL7EMt-kw" key="created_product_version" value="7.2.1.20190620_1446"/>
+    <additionalProperties xmi:id="_ERQ00jJCEeyJrJL7EMt-kw" key="created_date" value="2021-10-21T09:39:47.741+0200"/>
+    <additionalProperties xmi:id="_ERQ00zJCEeyJrJL7EMt-kw" key="modified_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_ERQ01DJCEeyJrJL7EMt-kw" key="modified_product_version" value="7.2.1.20190620_1446"/>
+    <additionalProperties xmi:id="_ERQ01TJCEeyJrJL7EMt-kw" key="modified_date" value="2021-10-21T09:39:47.741+0200"/>
+    <additionalProperties xmi:id="_iMxpkDZkEeyqleuC0T2YfA" key="import_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_iMxpkTZkEeyqleuC0T2YfA" key="import_product_version" value="7.2.1.20190620_1446"/>
+    <additionalProperties xmi:id="_iMxpkjZkEeyqleuC0T2YfA" key="import_date" value="2021-10-26T15:56:30.935+0200"/>
+  </TalendProperties:Property>
+  <TalendProperties:ItemState xmi:id="_ERQNwTJCEeyJrJL7EMt-kw" path="Hive/system"/>
+  <TalendProperties:SQLPatternItem xmi:id="_ERQNwjJCEeyJrJL7EMt-kw" property="_ERQNwDJCEeyJrJL7EMt-kw" state="_ERQNwTJCEeyJrJL7EMt-kw" system="true" eltName="Hive">
+    <content href="HiveFilterColumns_0.1.item#/"/>
+  </TalendProperties:SQLPatternItem>
+</xmi:XMI>

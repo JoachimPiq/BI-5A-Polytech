@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Property xmi:id="_ET-xoDJCEeyJrJL7EMt-kw" id="_ET-KkDJCEeyJrJL7EMt-kw" label="TeradataFilterColumns" version="0.1" item="_ET-xojJCEeyJrJL7EMt-kw">
+    <author href="../../../talend.project#_A659ATJCEeyJrJL7EMt-kw"/>
+    <additionalProperties xmi:id="_ET__wDJCEeyJrJL7EMt-kw" key="created_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_ET__wTJCEeyJrJL7EMt-kw" key="created_product_version" value="7.2.1.20190620_1446"/>
+    <additionalProperties xmi:id="_ET__wjJCEeyJrJL7EMt-kw" key="created_date" value="2021-10-21T09:39:48.028+0200"/>
+    <additionalProperties xmi:id="_ET__wzJCEeyJrJL7EMt-kw" key="modified_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_ET__xDJCEeyJrJL7EMt-kw" key="modified_product_version" value="7.2.1.20190620_1446"/>
+    <additionalProperties xmi:id="_ET__xTJCEeyJrJL7EMt-kw" key="modified_date" value="2021-10-21T09:39:48.028+0200"/>
+    <additionalProperties xmi:id="_iPBFQDZkEeyqleuC0T2YfA" key="import_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_iPBFQTZkEeyqleuC0T2YfA" key="import_product_version" value="7.2.1.20190620_1446"/>
+    <additionalProperties xmi:id="_iPBFQjZkEeyqleuC0T2YfA" key="import_date" value="2021-10-26T15:56:30.935+0200"/>
+  </TalendProperties:Property>
+  <TalendProperties:ItemState xmi:id="_ET-xoTJCEeyJrJL7EMt-kw" path="Teradata/system"/>
+  <TalendProperties:SQLPatternItem xmi:id="_ET-xojJCEeyJrJL7EMt-kw" property="_ET-xoDJCEeyJrJL7EMt-kw" state="_ET-xoTJCEeyJrJL7EMt-kw" system="true" eltName="Teradata">
+    <content href="TeradataFilterColumns_0.1.item#/"/>
+  </TalendProperties:SQLPatternItem>
+</xmi:XMI>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:DelimitedFileConnection xmi:id="_dU6iwDtGEeyIRNIzC7muVw" name="DistrictList" dataPackage="_dU6iwTtGEeyIRNIzC7muVw" Server="Localhost 127.0.0.1" FilePath="D:/Documents_Joachim/SyncFolder/Cours_5A/BI/Intégration/data/discritList.csv" Encoding="US-ASCII" FieldSeparatorValue="&quot;,&quot;" RowSeparatorValue="&quot;\n&quot;" FieldSeparatorType="Comma"/>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_dU6iwTtGEeyIRNIzC7muVw" name="default" dataManager="_dU6iwDtGEeyIRNIzC7muVw">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_dU6iwjtGEeyIRNIzC7muVw" id="_PYaysDtGEeyIRNIzC7muVw" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dU6iwztGEeyIRNIzC7muVw" label="DistrictId" length="2" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dU6ixDtGEeyIRNIzC7muVw" label="District_Name" length="12" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>

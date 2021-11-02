@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+D:\Documents_Joachim\Ecole\4eme_Annee\Cours\Buisness_Inteligence\TOS_DI-20190620_1446-V7.2.1\workspace\BI-5A\.metadata\.plugins\org.eclipse.jdt.core

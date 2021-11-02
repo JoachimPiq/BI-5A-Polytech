@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Property xmi:id="_3MXaMDZqEeyqleuC0T2YfA" id="_ho3aUDjMEeyN9e68rBYSNQ" label="MoCodes" description="Création de la dimension Mode_Operatoire" version="0.1" statusCode="" item="_3MXaMjZqEeyqleuC0T2YfA" displayName="MoCodes">
+    <author href="../talend.project#_A659ATJCEeyJrJL7EMt-kw"/>
+    <additionalProperties xmi:id="_3MqVIDZqEeyqleuC0T2YfA" key="created_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_3MqVITZqEeyqleuC0T2YfA" key="created_product_version" value="7.2.1.20190620_1446"/>
+    <additionalProperties xmi:id="_3MqVIjZqEeyqleuC0T2YfA" key="created_date" value="2021-10-29T17:26:02.855+0200"/>
+    <additionalProperties xmi:id="_3MqVIzZqEeyqleuC0T2YfA" key="modified_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_3MqVJDZqEeyqleuC0T2YfA" key="modified_product_version" value="7.2.1.20190620_1446"/>
+    <additionalProperties xmi:id="_3MqVJTZqEeyqleuC0T2YfA" key="modified_date" value="2021-11-01T18:19:51.308+0100"/>
+    <additionalProperties xmi:id="_V2njADs3EeyIRNIzC7muVw" key="import_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_V2njATs3EeyIRNIzC7muVw" key="import_product_version" value="7.2.1.20190620_1446"/>
+    <additionalProperties xmi:id="_V2njAjs3EeyIRNIzC7muVw" key="import_date" value="2021-11-01T18:15:37.576+0100"/>
+  </TalendProperties:Property>
+  <TalendProperties:ItemState xmi:id="_hth34DjMEeyN9e68rBYSNQ" path="" locked="true" lockDate="2021-11-01T18:19:51.308+0100">
+    <locker href="../talend.project#_A659ATJCEeyJrJL7EMt-kw"/>
+  </TalendProperties:ItemState>
+  <TalendProperties:ProcessItem xmi:id="_3MXaMjZqEeyqleuC0T2YfA" property="_3MXaMDZqEeyqleuC0T2YfA" state="_hth34DjMEeyN9e68rBYSNQ">
+    <process href="MoCodes_0.1.item#/"/>
+  </TalendProperties:ProcessItem>
+</xmi:XMI>

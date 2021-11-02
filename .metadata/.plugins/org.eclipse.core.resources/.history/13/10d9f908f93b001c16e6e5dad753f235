@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Property xmi:id="_qhW5gztHEeyIRNIzC7muVw" id="_qhWSYDtHEeyIRNIzC7muVw" label="Pop_Race_Gender_District" purpose="Db des populations par race et par genre de chaque district de LA" version="0.1" statusCode="" item="_qhW5hTtHEeyIRNIzC7muVw" displayName="Pop_Race_Gender_District">
+    <author href="../../talend.project#_A659ATJCEeyJrJL7EMt-kw"/>
+    <additionalProperties xmi:id="_qhYuoDtHEeyIRNIzC7muVw" key="created_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_qhYuoTtHEeyIRNIzC7muVw" key="created_product_version" value="7.2.1.20190620_1446"/>
+    <additionalProperties xmi:id="_qhYuojtHEeyIRNIzC7muVw" key="created_date" value="2021-11-01T20:12:32.394+0100"/>
+    <additionalProperties xmi:id="_qhYuoztHEeyIRNIzC7muVw" key="modified_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_qhYupDtHEeyIRNIzC7muVw" key="modified_product_version" value="7.2.1.20190620_1446"/>
+    <additionalProperties xmi:id="_qhYupTtHEeyIRNIzC7muVw" key="modified_date" value="2021-11-02T17:22:12.506+0100"/>
+  </TalendProperties:Property>
+  <TalendProperties:ItemState xmi:id="_qhW5hDtHEeyIRNIzC7muVw" path="" locked="true" lockDate="2021-11-02T17:22:01.989+0100">
+    <locker href="../../talend.project#_A659ATJCEeyJrJL7EMt-kw"/>
+  </TalendProperties:ItemState>
+  <TalendProperties:DelimitedFileConnectionItem xmi:id="_qhW5hTtHEeyIRNIzC7muVw" property="_qhW5gztHEeyIRNIzC7muVw" state="_qhW5hDtHEeyIRNIzC7muVw">
+    <connection href="Pop_Race_Gender_District_0.1.item#_qhW5cDtHEeyIRNIzC7muVw"/>
+  </TalendProperties:DelimitedFileConnectionItem>
+</xmi:XMI>

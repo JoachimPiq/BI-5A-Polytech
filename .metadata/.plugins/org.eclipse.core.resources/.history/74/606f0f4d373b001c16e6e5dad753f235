@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:DelimitedFileConnection xmi:id="_3_tqEDZnEeyqleuC0T2YfA" name="Crimes" dataPackage="_3_tqETZnEeyqleuC0T2YfA" Server="Localhost 127.0.0.1" FilePath="C:/Users/roro1/Documents/5A_INFO/Projet BI/Crime_Data_from_2010_to_2019.csv" Encoding="US-ASCII" FieldSeparatorValue="&quot;,&quot;" RowSeparatorValue="&quot;\n&quot;" UseHeader="true" HeaderValue="1" FirstLineCaption="true" EscapeType="CSV" CsvOption="true" FieldSeparatorType="Comma"/>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_3_tqETZnEeyqleuC0T2YfA" name="default" dataManager="_3_tqEDZnEeyqleuC0T2YfA">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_3_tqEjZnEeyqleuC0T2YfA" id="_G1bzEDZmEeyqleuC0T2YfA" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3_tqEzZnEeyqleuC0T2YfA" label="DR_NO" length="9" talendType="id_String" key="true" nullable="false" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3_tqFDZnEeyqleuC0T2YfA" label="Date_Rptd" length="22" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3_tqFTZnEeyqleuC0T2YfA" label="DATE_OCC" length="22" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3_tqFjZnEeyqleuC0T2YfA" label="TIME_OCC" length="4" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3_tqFzZnEeyqleuC0T2YfA" label="AREA" length="2" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3_tqGDZnEeyqleuC0T2YfA" label="AREA_NAME" length="9" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3_tqGTZnEeyqleuC0T2YfA" label="Rpt_Dist_No" length="4" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3_tqGjZnEeyqleuC0T2YfA" label="Part_1_2" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3_tqGzZnEeyqleuC0T2YfA" label="Crm_Cd" length="3" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3_tqHDZnEeyqleuC0T2YfA" label="Crm_Cd_Desc" length="40" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3_tqHTZnEeyqleuC0T2YfA" label="Mocodes" length="24" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3_tqHjZnEeyqleuC0T2YfA" label="Vict_Age" length="9" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3_tqHzZnEeyqleuC0T2YfA" label="Vict_Sex" length="7" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3_tqIDZnEeyqleuC0T2YfA" label="Vict_Descent" length="5" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3_tqITZnEeyqleuC0T2YfA" label="Premis_Cd" length="9" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3_tqIjZnEeyqleuC0T2YfA" label="Premis_Desc" length="31" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3_tqIzZnEeyqleuC0T2YfA" label="Weapon_Used_Cd" length="31" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3_tqJDZnEeyqleuC0T2YfA" label="Weapon_Desc" length="27" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3_tqJTZnEeyqleuC0T2YfA" label="Status" length="27" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3_tqJjZnEeyqleuC0T2YfA" label="Status_Desc" length="23" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3_tqJzZnEeyqleuC0T2YfA" label="Crm_Cd_1" length="23" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3_tqKDZnEeyqleuC0T2YfA" label="Crm_Cd_2" length="23" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3_tqKTZnEeyqleuC0T2YfA" label="Crm_Cd_3" length="23" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3_tqKjZnEeyqleuC0T2YfA" label="Crm_Cd_4" length="12" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3_3bEDZnEeyqleuC0T2YfA" label="LOCATION" length="39" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3_3bETZnEeyqleuC0T2YfA" label="Cross_Street" length="39" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3_3bEjZnEeyqleuC0T2YfA" label="LAT" length="39" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_3_3bEzZnEeyqleuC0T2YfA" label="LON" length="38" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>
