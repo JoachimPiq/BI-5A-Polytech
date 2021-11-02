@@ -1,2 +1,0 @@
-TOS_Jobs_Records={"BI54"\:{"projects"\:{"METADATA_FILE_DELIMITED"\:{"nb"\:8,"nb.used"\:6},"PROCESS"\:{"details"\:{"components"\:[{"component_name"\:"tFileInputDelimited","count"\:9},{"component_name"\:"tUniqRow","count"\:11},{"component_name"\:"tMap","count"\:6},{"component_name"\:"tFileOutputDelimited","count"\:10},{"component_name"\:"tAggregateRow","count"\:1}],"nb.components"\:37,"nb.contextVars"\:0},"nb"\:5}},"type"\:"local"}}
-eclipse.preferences.version=1

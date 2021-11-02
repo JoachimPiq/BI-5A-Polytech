@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
-  <TalendMetadata:DelimitedFileConnection xmi:id="_xZG0cDgSEey3UrQ5kh2knw" name="Mocodes" dataPackage="_xZG0cTgSEey3UrQ5kh2knw" Server="Localhost 127.0.0.1" FilePath="C:/Users/roro1/Documents/5A_INFO/Projet BI/mocodes.csv" Encoding="US-ASCII" FieldSeparatorValue="&quot;;&quot;" RowSeparatorValue="&quot;\n&quot;"/>
-  <orgomg.cwm.resource.record:RecordFile xmi:id="_xZG0cTgSEey3UrQ5kh2knw" name="default" dataManager="_xZG0cDgSEey3UrQ5kh2knw">
-    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_xZG0cjgSEey3UrQ5kh2knw" id="_rC5gUDgSEey3UrQ5kh2knw" label="metadata">
-      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_xZG0czgSEey3UrQ5kh2knw" label="Column0" length="36" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
-    </ownedElement>
-  </orgomg.cwm.resource.record:RecordFile>
-</xmi:XMI>
