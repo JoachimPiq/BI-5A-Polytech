@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:DelimitedFileConnection xmi:id="_fAPEwTv5EeyIRNIzC7muVw" name="Population_Ethnie_Genre_District" dataPackage="_fAPEwjv5EeyIRNIzC7muVw" Server="Localhost 127.0.0.1" FilePath="D:/Documents_Joachim/SyncFolder/Cours_5A/BI/Intégration/data/popRaceGenre.csv" Encoding="US-ASCII" FieldSeparatorValue="&quot;,&quot;" RowSeparatorValue="&quot;\n&quot;" UseHeader="true" HeaderValue="1" FirstLineCaption="true" FieldSeparatorType="Comma"/>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_fAPEwjv5EeyIRNIzC7muVw" name="default" dataManager="_fAPEwTv5EeyIRNIzC7muVw">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_fAPEwzv5EeyIRNIzC7muVw" id="_GbQTEDv5EeyIRNIzC7muVw" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_fAPExDv5EeyIRNIzC7muVw" label="council_district" length="2" talendType="id_Integer" key="true" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_fAPExTv5EeyIRNIzC7muVw" label="MALE_population" length="6" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_fAPExjv5EeyIRNIzC7muVw" label="FEMALE_population" length="6" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_fAPExzv5EeyIRNIzC7muVw" label="ASIAN_population" length="5" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_fAPEyDv5EeyIRNIzC7muVw" label="HISPANIC_OR_LATINO_population" length="6" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_fAPEyTv5EeyIRNIzC7muVw" label="WHITE_population" length="6" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_fAPEyjv5EeyIRNIzC7muVw" label="BLACK_OR_AFRICAN_AMERICAN_population" length="5" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_fAPEyzv5EeyIRNIzC7muVw" label="OTHER_ETHNIE_population" length="5" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>

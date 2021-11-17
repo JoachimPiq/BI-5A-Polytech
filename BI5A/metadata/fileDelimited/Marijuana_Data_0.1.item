@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:DelimitedFileConnection xmi:id="_PqeJwDv7EeyIRNIzC7muVw" name="Marijuana_Data" dataPackage="_PqeJwTv7EeyIRNIzC7muVw" Server="Localhost 127.0.0.1" FilePath="D:/Documents_Joachim/SyncFolder/Cours_5A/BI/Intégration/data/Marijuana_Data.csv" Encoding="US-ASCII" FieldSeparatorValue="&quot;,&quot;" RowSeparatorValue="&quot;\n&quot;" UseHeader="true" HeaderValue="1" FirstLineCaption="true" FieldSeparatorType="Comma"/>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_PqeJwTv7EeyIRNIzC7muVw" name="default" dataManager="_PqeJwDv7EeyIRNIzC7muVw">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_PqeJwjv7EeyIRNIzC7muVw" id="_BZTKMDv7EeyIRNIzC7muVw" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_PqeJwzv7EeyIRNIzC7muVw" label="Report_ID" length="9" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_PqeJxDv7EeyIRNIzC7muVw" label="Arrest_Date" length="10" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_PqeJxTv7EeyIRNIzC7muVw" label="Time" length="4" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_PqeJxjv7EeyIRNIzC7muVw" label="Area_ID" length="2" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_PqeJxzv7EeyIRNIzC7muVw" label="Area_Name" length="10" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_PqeJyDv7EeyIRNIzC7muVw" label="Reporting_District" length="4" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_PqeJyTv7EeyIRNIzC7muVw" label="Age" length="2" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_PqeJyjv7EeyIRNIzC7muVw" label="Sex_Code" length="1" talendType="id_Character" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_PqeJyzv7EeyIRNIzC7muVw" label="Descent_Code" length="1" talendType="id_Character" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_PqeJzDv7EeyIRNIzC7muVw" label="Charge_Group_Code" length="2" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_PqeJzTv7EeyIRNIzC7muVw" label="Charge_Group_Description" length="18" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_PqeJzjv7EeyIRNIzC7muVw" label="Arrest_Type_Code" length="1" talendType="id_Character" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_PqeJzzv7EeyIRNIzC7muVw" label="Charge" length="10" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_PqeJ0Dv7EeyIRNIzC7muVw" label="Charge_Description" length="41" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_PqeJ0Tv7EeyIRNIzC7muVw" label="Address" length="40" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_PqeJ0jv7EeyIRNIzC7muVw" label="Cross_Street" length="31" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>
