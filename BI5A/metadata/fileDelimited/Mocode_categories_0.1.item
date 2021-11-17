@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:DelimitedFileConnection xmi:id="_uy6dUEfAEeyfar8g3ndGCg" name="Mocode_categories" dataPackage="_uy6dUUfAEeyfar8g3ndGCg" Server="Localhost 127.0.0.1" FilePath="D:/data/Inputs/modeop_categ.csv" Encoding="ISO-8859-1" FieldSeparatorValue="&quot;;&quot;" RowSeparatorValue="&quot;\n&quot;" UseHeader="true" HeaderValue="1" FirstLineCaption="true"/>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_uy6dUUfAEeyfar8g3ndGCg" name="default" dataManager="_uy6dUEfAEeyfar8g3ndGCg">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_uy6dUkfAEeyfar8g3ndGCg" id="_IEXv8EfAEeyfar8g3ndGCg" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_uy6dU0fAEeyfar8g3ndGCg" label="Mocode" length="3" talendType="id_Integer" key="true" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_uy6dVEfAEeyfar8g3ndGCg" label="Usurpation_d_identite" length="-1" talendType="id_Boolean" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_uy6dVUfAEeyfar8g3ndGCg" label="Deguise" length="-1" talendType="id_Boolean" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_uy6dVkfAEeyfar8g3ndGCg" label="Vicitme_handicapee" length="-1" talendType="id_Boolean" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_uy6dV0fAEeyfar8g3ndGCg" label="Arme" length="-1" talendType="id_Boolean" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_uy6dWEfAEeyfar8g3ndGCg" label="Cache" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_uy6dWUfAEeyfar8g3ndGCg" label="Famille" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_uy6dWkfAEeyfar8g3ndGCg" label="Connait" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_uy6dW0fAEeyfar8g3ndGCg" label="Langue" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_uy6dXEfAEeyfar8g3ndGCg" label="Gang" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_uy6dXUfAEeyfar8g3ndGCg" label="Violence" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_uy6dXkfAEeyfar8g3ndGCg" label="Vehicule" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_uy6dX0fAEeyfar8g3ndGCg" label="Sexe" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_uy6dYEfAEeyfar8g3ndGCg" label="Alcool" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_uy6dYUfAEeyfar8g3ndGCg" label="Papier" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_uy6dYkfAEeyfar8g3ndGCg" label="Genre" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_uy6dY0fAEeyfar8g3ndGCg" label="Racisme" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_uy6dZEfAEeyfar8g3ndGCg" label="Religion" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_uy6dZUfAEeyfar8g3ndGCg" label="LGBT" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_uy6dZkfAEeyfar8g3ndGCg" label="Internet" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_uy6dZ0fAEeyfar8g3ndGCg" label="recidive" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_uy6daEfAEeyfar8g3ndGCg" label="Suspect_flic" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_uy6daUfAEeyfar8g3ndGCg" label="Terrorisme" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>

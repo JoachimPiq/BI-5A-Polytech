@@ -93,15 +93,15 @@
     <elementParameter field="TEXT" name="FOOTER_LIBRARY" value="" show="false"/>
     <elementParameter field="TEXT" name="FOOTER_CODE" value="" show="false"/>
     <elementParameter field="TEXT" name="FOOTER_IMPORT" value="" show="false"/>
-    <routinesParameter id="_EL2JUDJCEeyJrJL7EMt-kw" name="DataOperation"/>
-    <routinesParameter id="_EM7HYDJCEeyJrJL7EMt-kw" name="Mathematical"/>
-    <routinesParameter id="_ENJJ0DJCEeyJrJL7EMt-kw" name="Numeric"/>
-    <routinesParameter id="_ENOpYDJCEeyJrJL7EMt-kw" name="Relational"/>
-    <routinesParameter id="_ENUI8DJCEeyJrJL7EMt-kw" name="StringHandling"/>
-    <routinesParameter id="_ENdS4DJCEeyJrJL7EMt-kw" name="TalendDataGenerator"/>
-    <routinesParameter id="_ENiLYDJCEeyJrJL7EMt-kw" name="TalendDate"/>
-    <routinesParameter id="_EN1GUDJCEeyJrJL7EMt-kw" name="TalendStringUtil"/>
-    <routinesParameter id="_ENu_sDJCEeyJrJL7EMt-kw" name="TalendString"/>
+    <routinesParameter id="_tNcN8ke4Eeyfar8g3ndGCg" name="DataOperation"/>
+    <routinesParameter id="_tNw-EEe4Eeyfar8g3ndGCg" name="Mathematical"/>
+    <routinesParameter id="_tN79MEe4Eeyfar8g3ndGCg" name="Numeric"/>
+    <routinesParameter id="_tOR7cEe4Eeyfar8g3ndGCg" name="Relational"/>
+    <routinesParameter id="_tOeIsEe4Eeyfar8g3ndGCg" name="StringHandling"/>
+    <routinesParameter id="_tOqV8Ee4Eeyfar8g3ndGCg" name="TalendDataGenerator"/>
+    <routinesParameter id="_tO18IEe4Eeyfar8g3ndGCg" name="TalendDate"/>
+    <routinesParameter id="_tPIQAEe4Eeyfar8g3ndGCg" name="TalendStringUtil"/>
+    <routinesParameter id="_tPDXgEe4Eeyfar8g3ndGCg" name="TalendString"/>
   </parameters>
   <node componentName="tFileInputDelimited" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="224" posY="352">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputDelimited_1" show="false"/>
