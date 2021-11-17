@@ -11,18 +11,18 @@
   <groupId>org.example.bi5a.job</groupId>
   <artifactId>MoCodes</artifactId>
   <version>0.1.0</version>
-  <name>BI5A MoCodes-0.1.0 (0.1,Jobs)</name>
+  <name>OSKOUR MoCodes-0.1.0 (0.1,Jobs)</name>
   <properties>
     <output.resources.dir>${talend.job.name}/src/main/resources</output.resources.dir>
     <talend.job.applyContextToChildren>false</talend.job.applyContextToChildren>
     <current.test.resources.dir>${basedir}/src/test/resources</current.test.resources.dir>
     <current.int-resources.dir>${basedir}/src/main/resources</current.int-resources.dir>
     <talend.job.version>0.1</talend.job.version>
-    <talend.project.name.lowercase>bi5a</talend.project.name.lowercase>
-    <talend.job.path>bi5a/mocodes_0_1</talend.job.path>
+    <talend.project.name.lowercase>oskour</talend.project.name.lowercase>
+    <talend.job.path>oskour/mocodes_0_1</talend.job.path>
     <project.distribution-management.repository.id>${project.distributionManagement.repository.id}</project.distribution-management.repository.id>
     <maven.build.timestamp.format>yyyy-MM-dd HHmmssSSS</maven.build.timestamp.format>
-    <talend.project.name>BI5A</talend.project.name>
+    <talend.project.name>OSKOUR</talend.project.name>
     <talend.product.version>7.2.1.20190620_1446</talend.product.version>
     <talend.job.finalName>mocodes_0_1</talend.job.finalName>
     <talend.pigudf.groupid>org.example.bi5a.pigudf</talend.pigudf.groupid>

@@ -6,7 +6,7 @@
   <artifactId>code.Master</artifactId>
   <version>7.2.1</version>
   <packaging>pom</packaging>
-  <name>BI5A Codes Master</name>
+  <name>OSKOUR Codes Master</name>
   <url>http://www.talend.org/</url>
   <modules>
     <module>code/routines</module>
@@ -18,7 +18,7 @@
     <module>jobs/process/lapd_area_dim_0.1</module>
   </modules>
   <properties>
-    <talend.project.name>BI5A</talend.project.name>
+    <talend.project.name>OSKOUR</talend.project.name>
     <encoding>UTF-8</encoding>
   </properties>
   <build>
